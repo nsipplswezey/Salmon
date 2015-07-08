@@ -1,0 +1,58 @@
+Novaol.recordJSON({
+    title: "aggregateModel",
+    address: "rms@cs.oberlin.edu",
+    clock: {lo: 0, hi: 3, max: 1000, dt: 1.000000, method: "Euler", step: 1},
+//    background_color: "lightcyan",
+    modcontrols: [[
+        {type: "slider", id: "smolt_Survival_Rate", text: "smolt_Survival_Rate", size: 6, min: 0.000000, max: 1.000000, value: 0.330000, step: 0.010000},
+        {type: "slider", id: "fry_Survival_Rate", text: "fry_Survival_Rate", size: 6, min: 0.000000, max: 1.000000, value: 0.400000, step: 0.010000},
+        {type: "slider", id: "egg_Survival_Rate", text: "egg_Survival_Rate", size: 6, min: 0.000000, max: 1.000000, value: 0.430000, step: 0.010000},
+    ]],
+    visuals: function(hook, project, index){
+        var table = hook.append("table").attr("class", "dataTable");
+        var row = table.append('tr');
+        row.append('td')
+        .style('vertical-align', 'top')
+        .style('padding', '15px')
+        .append("div")
+        .attr("id", "each_StatePop_"+project+"_"+index)
+        .attr('class', 'linechart')
+        row.append('td')
+        .style('vertical-align', 'top')
+        .style('padding', '15px')
+        .append("div")
+        .attr("id", "current_Population_Graph_"+project+"_"+index)
+        .attr('class', 'linechart')
+    },
+    params: function(project, index){return {
+        each_StatePop: {
+            vizid: "each_StatePop_"+project+"_"+index,
+            width: 500,
+            height: 350,
+            margin: {top: 40, right: 20, bottom: 40, left: 60},
+            autogen: true,
+            valueFunc: function(data){return data.val;},
+            textFunc: function(data){return data.time;},
+            lo: novaol.get("clock.lo"),
+            hi: globl[project].controls[index].simhi,
+            caption: "each_StatePop",
+            streams: 4,
+            strokes: ["#0000ff", "#ff0000", "#00ff00", "#00ffff"],
+            init: function(){return [this.adults, this.eggs, this.fry, this.smolt]},
+        },
+        current_Population_Graph: {
+            vizid: "current_Population_Graph_"+project+"_"+index,
+            width: 500,
+            height: 350,
+            margin: {top: 40, right: 20, bottom: 40, left: 60},
+            autogen: true,
+            valueFunc: function(data){return data.val;},
+            textFunc: function(data){return data.time;},
+            lo: novaol.get("clock.lo"),
+            hi: globl[project].controls[index].simhi,
+            caption: "current_Population_Graph",
+            stroke: "#0000ff",
+            init: function(){return this.currentTotal;},
+        },
+    }}
+});
