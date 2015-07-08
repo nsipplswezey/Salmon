@@ -279,7 +279,7 @@ Tangle.classes.LadderActionLink = new Class({
         preload.src = filename;
 
         this.addHighlight = function () {
-            var hostElement = this.tangle.element.getElement(".LadderRoad");
+            var hostElement = this.tangle.element.getElement(".algorithm");
             if (!hostElement) { return; }
             var element = hostElement.getElement("div");
             if (!element) { return; }
