@@ -1,0 +1,392 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+    <meta charset="utf-8">
+    <head>
+
+        <!-- Utilities -->
+        <script src="common/util/d3.min.js"></script>
+        <script src="common/util/underscore.js"></script>
+
+        <!-- NovaOL -->
+        <script src="common/NovaOL/jnovascriptx.js"></script>
+        <script src="common/NovaOL/jpluginsx.js"></script>
+        <script src="common/NovaOL/novaol.js"></script>
+
+        <!-- NovaOL Plugins -->
+        <script src="common/plugins/linechart.js"></script>
+
+        <!-- Simulation Definition -->
+        <script src="directMapToInclassGameWithFlowsAndRelayingEggs2600.json" data-project="directMapToInclassGameWithFlowsAndRelayingEggs2600"></script>
+        <script src="directMapToInclassGameWithFlowsAndRelayingEggs2600.js" data-project="directMapToInclassGameWithFlowsAndRelayingEggs2600"></script>
+
+
+        <!--            Tangle -->
+        <script type="text/javascript" src="Tangle.js"></script>
+
+        <!--             TangleKit -->
+        <link rel="stylesheet" href="TangleKit/TangleKit.css" type="text/css">
+        <script type="text/javascript" src="TangleKit/MooTools-Core-1.5.1.js"></script>
+        <script type="text/javascript" src="TangleKit/sprintf.js"></script>
+        <script type="text/javascript" src="TangleKit/BVTouchable.js"></script>
+        <script type="text/javascript" src="TangleKit/TangleKit.js"></script>
+
+        <!--             LayerScript -->
+        <script type="text/javascript" src="LayerScript/BVLayer.js"></script>
+        <script type="text/javascript" src="LayerScript/BVText.js"></script>
+        <script type="text/javascript" src="LayerScript/BVTouches.js"></script>
+        <script type="text/javascript" src="LayerScript/BVScrubbableLayer.js"></script>
+
+        <!-- Tangle Project -->
+        <script type="text/javascript" src="Project/Main.js"></script>
+        <script type="text/javascript" src="Project/Slider.js"></script>
+
+
+
+        <!-- Nova Styles -->
+        <link rel="icon" type="image/png" href="common/images/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="common/css/nova.css" />
+        <link rel="stylesheet" type="text/css" href="common/css/linechart.css" />
+        <link rel="icon" type="image/png" href="common/images/favicon.ico"/>
+
+        <!-- Page Styles -->
+        <link href="Style.css" rel="stylesheet" type="text/css"/>
+
+
+        <title>The Salmon Game</title>
+    </head>
+
+    <body>
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <!-- Page Header: The Circle Game -->
+
+
+        <div class="headerBackground"></div>
+
+        <div class="header">
+            <h1> The Salmon Game </h1>
+            <h2> Exploring the Life Cycle Strategies of Salmon Using Computational Modeling </h2>
+            <h3> by Nick Sippl-Swezey and Bryan Flaig </h3>
+        </div>
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <!-- Page Intro: Ladder Quotes -->
+
+        <div class="intro">
+            <div class="columnLeft">
+                <p><i>"In science, if you know what you are doing, you should not be doing it.  In engineering, if you do not know what you are doing, you should not be doing it.  Of course, you seldom, if ever, see either pure state."</i></p>
+                <div class="quoteCitation">&mdash;Richard Hamming, <a href="http://www.amazon.com/dp/B000P2XFPA">The Art of Doing Science and Engineering</a></div>
+
+                <p>How can we design systems when we don't know what we're doing?</p>
+
+                <p>The most exciting engineering challenges lie on the <b>boundary of theory and the unknown</b>.  Not so unknown that they're hopeless, but not enough theory to predict the results of our decisions.  Systems at this boundary often rely on <i>emergent behavior</i> &mdash; high-level effects that arise indirectly from low-level interactions.</p>
+
+                <p>When designing at this boundary, the challenge lies not in constructing the system, but in understanding it.   In the absence of theory, we must develop an <i>intuition</i> to guide our decisions.  The design process is thus one of exploration and discovery.</p>
+
+            </div>
+            <div class="columnRight" style="width:401px;">
+
+                <p>How do we explore?  If you move to a new city, you might learn the territory by walking around.  Or you might peruse a map.  But far more effective than either is <i>both together</i> &mdash; a street-level experience with higher-level guidance.</p>
+
+                <p>Likewise, the most powerful way to gain insight into a system is by <i>moving between levels of abstraction</i>.  Many designers do this instinctively.  But it's easy to get stuck on the ground, experiencing concrete systems with no higher-level view.  It's also easy to get stuck in the clouds, working entirely with abstract equations or aggregate statistics.</p>
+
+                <p>This interactive essay presents the <b>ladder of abstraction</b>, a technique for thinking <i>explicitly</i> about these levels, so a designer can move among them consciously and confidently.</p>
+
+                <p>I believe that an essential skill of the modern system designer will be using the <i>interactive medium</i> to move fluidly around the ladder of abstraction.</p>
+
+            </div>
+            <div class="endOfColumns"></div>
+        </div>
+
+
+
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <!-- The Salmon Game -->
+        <!-- img class="novaIcon" src="Images/Icons/32x32.png" alt="" width="40" height="39" -->
+
+
+        <div class="chapter">
+            <div class="chapterHeader"><span>Let's Play a Game</span></div>
+
+            <div style="width:100px; height:20px;"></div>
+
+            <div class="tangle" data-model="game">
+                <div class="columnLeft">
+                    <p>Write some introductory text here</p>
+                </div>
+                <div class="endOfColumns"></div>
+
+                <div style="width:100px; height:20px;"></div>
+
+
+                <div class="columnLeft">
+                    <p>We'll start with an in-depth example &mdash; an event-based classroom game called <b>the salmon game</b>. The game is played as follows:</p>
+                    <p>2,600 salmon eggs go from their mothers egg-pouch all the way to adult hood. Their journey consists of 13 different events, <strong>detailed to the right</strong>, where at each event, some number of potential offspring are lost.</p>
+                    <p>Students keep track of the 2,600 eggs using beans. A 1lb. bag of pinto beans contains approximately 1300 beans. Two pounds = 2600 beans, the approximate average number of eggs laid by 1 female coho.</p>
+                    <p>100 beans have a mass of approxmiately 34 grams. When removing beans that are not in groups of 100, have students remove the nearest 100 based on mass, and then count out the beans needed to reach the total.</p>
+                </div>
+
+
+
+
+                <div class="columnRight">
+                    <div class="algorithm">
+                        <div class="algorithmHeader">Salmon Game Events:</div>
+                        <div class="algorithmLine">Start with <span data-var="eggLaying" data-format="%.0f eggs"></span> at the spawning grounds.</div>
+                        <div class="algorithmLine">You lose <span data-var="fertilization" data-format="%.0f fertilized eggs"></span> because not all eggs are fertalized by male coho.</div>
+                        <div class="algorithmLine">You lose <span data-var="fungusKillsEggs" data-format="%.0f fertilized eggs"></span> because some fertilized eggs become diseased with fungus.</div>
+                        <div class="algorithmLine">You lose <span data-var="rainAndMud" data-format="%.0f fertilized eggs"></span> because some fertilized eggs are eaten by birds.</div>
+                        <div class="algorithmLine">You're left with <span data-var="alevin" data-format="%.0f alevin"></span>.</div>
+                        <div class="algorithmLine">You lose <span data-var="eggHatching" data-format="%.0f alevin"></span> because some surviving fertilized eggs don't hatch.</div>
+                        <div class="algorithmLine">You lose <span data-var="birdsEatAlevin" data-format="%.0f alevin"></span> because some alevin are eaten by birds.</div>
+                        <div class="algorithmLine">You're left with <span data-var="fry" data-format="%.0f fry"></span>.</div>
+                        <div class="algorithmLine">You lose <span data-var="heronsFrogsAndOtherFish" data-format="%.0f fry"></span> because herons, frogs and other fish eat them.</div>
+                        <div class="algorithmLine">You lose <span data-var="summerWaterLevelDrop" data-format="%.0f fry"></span> because summer water level drops.</div>
+                        <div class="algorithmLine">You're left with <span data-var="smolts" data-format="%.0f smolt"></span>.</div>
+                        <div class="algorithmLine">You lose <span data-var="fishKillerWhalesSeaLionsBirds" data-format="%.0f smolt"></span> because they're eaten by killer whales, sea lions and birds.</div>
+                        <div class="algorithmLine">You're left with <span data-var="adults" data-format="%.0f adult coho salmon"></span></div>
+                        <div class="algorithmLine">You lose <span data-var="salmonFishingBoat" data-format="%.0f adult coho salmon"></span> adults because some get fished by fishing boats.</div>
+                        <div class="algorithmLine">You lose <span data-var="killerWhale" data-format="%.0f adult coho"></span> adults because some get eaten by killer whales.</div>
+                        <div class="algorithmLine">You're left with <span data-var="spawningAdults" data-format="%.0f adult coho salmon"></span> spawning adults.</div>
+                        <div class="algorithmLine">You lose <span data-var="spawningAdults" data-format="%.0f adult coho salmon"></span> to spawning.</div>
+                        <div class="algorithmLine">You're left with <span data-var="adultsSurviveSpawning" data-format="%.0f adult coho salmon"></span> that survive spawning.</div>
+
+                    </div>
+                </div>
+
+
+                <div class="endOfColumns"></div>
+
+                <div class=columnLeft>
+                    <p>You can track the current number of potentially viable offspring at each event using this slider</p>
+
+                </div>
+
+                <div class=columnRight>
+                    <div>
+                        Event:
+                        <div style="display:inline-block; position:relative; top:-20px; left:9px;"
+                             class="Slider" data-var="time lockedTime" data-width="330" data-min="0" data-max="17" data-step="1" data-format="Event %.0f " data-margin="25"></div>
+                    </div>
+
+                </div>
+
+                <div class="endOfColumns"></div>
+
+                <div class="columnLeft">
+                    <p>You can change the number of eggs, alevin, fry, smolt and adults lost to each event by touching the text, or moving the sliders.</p>
+
+                    <p>These events and numbers can also be crafted into a narrative.</p>
+
+
+                </div>
+
+                <div class="endOfColumns"></div>
+
+
+                <div class="columnLeft">
+
+
+                    <p> A single female coho salmon lays <span data-var="eggLaying" class="TKAdjustableNumber" data-min="2500" data-max="3000" data-step="1" data-format="%.0f eggs"></span> near the headwaters of the river.
+                        <b>Place your fish in the egg/alevin section. </b>
+                    </p>
+
+                    <p>Some of the eggs are not successfully ferilized by male coho salmon, so <span data-var="fertilization" class="TKAdjustableNumber" data-min="600" data-max="1000" data-step="1" data-format="%.0f eggs"></span> are lost.
+                        Some fertilized eggs become diseased with a fungus and <span data-var="fungusKillsEggs" class="TKAdjustableNumber" data-min="100" data-max="300" data-step="1" data-format="%.0f eggs"></span> are lost.
+                        Some fertilized eggs are eaten by birds, so <span data-var="birdsEatEggs" class="TKAdjustableNumber" data-min="100" data-max="300" data-step="1" data-format="%.0f eggs"></span> are lost.
+                        A heavy rainstorm hits the watershed. Some eggs are washed downstream and others are covered in tick mud and suffocate. <span data-var="rainAndMud" class="TKAdjustableNumber" data-min="350" data-max="450" data-step="1" data-format="%.0f eggs"></span> are lost.
+                        Approximately 40 days have passed since th eggs were fertalized. Small fish called alevin start to emerge as the eggs hatch. They have small yolk sacs attached to their bodies. They will feed off the yolk sacs for several weeks. Alevin stay very close to the bottom of the stream or under the gravel. <b><span data-var="alevin" data-format="%.0f eggs"></span> survived</b> to alevin stage.
+                    </p>
+
+                    <p> Not all eggs hatch successfully. Some never emerge and other have mutations, like deformed fins. <span data-var="eggHatching" class="TKAdjustableNumber" data-min="250" data-max="350" data-step="1" data-format="%.0f alevin"></span> are lost.
+                        Herons, ducks and kingfishers find alevin at the bottom of the stream and eat <span data-var="eggHatching" class="TKAdjustableNumber" data-min="250" data-max="350" data-step="1" data-format="%.0f alevin"></span>.
+                        Six months have passed since the eggs were first laid. The alevin have absorbed all of the yolk sac and are now called fry. <b><span data-var="fry" data-format="%.0f alevin"></span> survived</b> to fry stage.
+                        <b>Move your fish to the fry section.</b>
+                    </p>
+
+                    <p> Fry swim faster without their yolk sacs, and they move away from the bottom of the stream and out to the edges. gerons, frogs and other fish eat <span data-var="heronsFrogsAndOtherFish" class="TKAdjustableNumber" data-min="180" data-max="200" data-step="1" data-format="%.0f fry"></span>.
+                        It is now the middle of the summer, and water temperatures are increasing as the stream level drops. <span data-var="summerWaterLevelDrop" class="TKAdjustableNumber" data-min="160" data-max="180" data-step="1" data-format="%.0f fry"></span> are cought in shallow pools and do not survive the higher temperatures.
+                        The surviving fry grow quickly and are now a few inches long. They move downstream and take on a shiny, silver color. As they feed on insects, they reach 6 inches in length. They are now called smolts. <b><span data-var="smolts" data-format="%.0f fry"></span> survived</b> to smolt stage.
+                        <b>Move your fish to the smolt section.</b>
+                    </p>
+
+                    <p> The smolts are now ready to migrate out to the sea. They have spent 1 full year in the river as freshwater fish. They begin by moving down the estuary to the river.
+                        <b>Move your fish to the estuary section.</b>
+                    </p>
+
+                    <p> <span data-var="fishKillerWhalesSeaLionsBirds" class="TKAdjustableNumber" data-min="20" data-max="30" data-step="1" data-format="%.0f smolts"></span> are eaten by other fish, killer whales, sea lions and birds.
+                        <b><span data-var="adults" data-format="%.0f smolts"></span> survived </b> to the adult stage.
+                        Smolts move to the open ocean and grow to adult size. They join schools of coho from other rivers. They spend 1 to 3 years feeding in the ocean and grow to about 2 feet long and about 35 pounds.
+                        <b>Move your fish to the ocean section</b>
+                    </p>
+
+                    <p> A salmon fishing boat hooks several fish from a school of coho in the ocean. <span data-var="salmonFishingBoat" class="TKAdjustableNumber" data-min="1" data-max="3" data-step="1" data-format="%.0f those adult coho"></span> were from the spawn of your mother coho.
+                        A pod of killer whales attacks the school of coho, <span data-var="killerWhale" class="TKAdjustableNumber" data-min="1" data-max="3" data-step="1" data-format="%.0f those adult coho"></span> were from the spawn of your mother coho.
+                        In general, 0 to 10 eggs from one pair of coho salmon will survive to become spawning adults.
+                        After 2 years in the ocean, the remaining fish return to their native stream, and head back to their spawning grounds to lay their eggs. All coho salmon die after they spawn.
+                        The cycle begins again with a new batch of eggs.
+                    </p>
+
+                </div>
+
+
+                <div class="columnRight">
+                    <div>
+                        <div>
+                            Eggs laid:
+                            <div style="display:inline-block; position:relative; top:-20px; left:9px;"
+                                 class="Slider" data-var="eggLaying lockedEggLaying" data-width="330" data-min="2500" data-max="3000" data-step="1" data-format="%.0f eggs" data-margin="25"></div>
+                        </div>
+
+                        <div>
+                            Eggs not fertilized:
+                            <div style="display:inline-block; position:relative; top:-20px; left:9px;"
+                                 class="Slider" data-var="fertilization lockedFertilization" data-width="330" data-min="600" data-max="1000" data-step="1" data-format="%.0f eggs" data-margin="25"></div>
+                        </div>
+
+                        <div>
+                            Eggs lost to disease:
+                            <div style="display:inline-block; position:relative; top:-20px; left:9px;"
+                                 class="Slider" data-var="fungusKillsEggs lockedFungusKillsEggs" data-width="330" data-min="100" data-max="300" data-step="1" data-format="%.0f eggs" data-margin="25"></div>
+                        </div>
+
+                        <div>
+                            Eggs eaten by birds:
+                            <div style="display:inline-block; position:relative; top:-20px; left:9px;"
+                                 class="Slider" data-var="birdsEatEggs lockedBirdsEatEggs" data-width="330" data-min="100" data-max="300" data-step="1" data-format="%.0f eggs" data-margin="25"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="endOfColumns"></div>
+
+
+                <div class="columnLeft">
+                    <p>The game is an <b>event based model</b> of salmon spawning. Below is a computational simulation of the exact event driven model played in class.</p>
+                </div>
+                <div class="columnRight">
+
+
+                </div>
+                <div class="endOfColumns"></div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <!-- Chapter Abstracting 12 events into 3 proportions -->
+
+        <div class="chapter">
+            <div class="chapterHeader"><span>Abstracting</span></div>
+
+            <div style="width:100px; height:6px;"></div>
+
+            <div class="columnLeft">
+                <p>Our first model answers the question:</p>
+
+                <p><b>"How many viable offspring are generated by one mature spawning adult, given these data supported assumptions about survival rates"</b></p>
+
+                <p>In so far as we trust our reasoning, our data and our assumptions, the answer to this question is: "not very many!" The majority of eggs a mother coho lays never make it to adulthood. Based on our data, and our first model, only 2 in 2,600 eggs from this mother coho grow into adults that return to spawn.</p>
+
+                <p>Now that we have a clear and detailed foundation model about the number of surviving eggs, we can start exploring new questions.</p>
+
+                <p>If 2 out of 2,600 eggs survive, how will the coho population grow or decline?</p>
+
+                <p>If we build a dam that makes it more difficult for coho to reach the spawning ground, or for new developing coho to reach the sea, will less than 2 out of 2,600 eggs survive to spawn again? If less than 2 out of 2,600 eggs return to spawn, will our coho population grow or decline over multiple generations?</p>
+
+                <p>The model below feeds the surviving coho from our first model back in as spawning adults. Each spawning adult lays 2,600 eggs, and then the cycle begins again. What do you notice?</p>
+
+                <p>Click the <strong>run button</strong> to find out</p>
+
+            </div>
+            <div class="columnRight">
+
+
+            </div>
+            <div class="endOfColumns"></div>
+
+
+            <p>Does this model support the conclusion that salmon populations grow under these conditions?</p>
+            <!-- Model Content -->
+            <div id="directMapToInclassGameWithFlowsAndRelayingEggs2600_1"></div>
+
+
+
+
+        </div>
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <!-- Closing the loop to answer a new question -->
+
+
+        <div class="chapter">
+
+        </div>
+
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <!-- Closed Loop -->
+
+        <div class="chapter">
+            <div class="chapterHeader"><span>Closing the Loop</span></div>
+
+            <div style="width:100px; height:6px;"></div>
+
+
+            <div class="columnLeft">
+                <p>We'll start with an in-depth example &mdash; a table top game called <b>the circle game</b>. The game is played as follows:</p>
+            </div>
+            <div class="columnRight">
+                <p>Do salmon populations grow under these conditions?</p>
+
+            </div>
+            <div class="endOfColumns"></div>
+
+
+
+        </div>
+
+        <div class=chapter>
+
+        </div>
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        <!-- Adding dams -->
+
+        <div class="chapter">
+            <div class="chapterHeader"><span>How does a damn affect this population?</span></div>
+
+            <div style="width:100px; height:6px;"></div>
+
+
+            <div class="columnLeft">
+                <p>We'll start with an in-depth example &mdash; a table top game called <b>the circle game</b>. The game is played as follows:</p>
+            </div>
+            <div class="columnRight">
+                <p>We'll start with an in-depth example &mdash; a table top game called <b>the circle game</b>. The game is played as follows:</p>
+
+            </div>
+            <div class="endOfColumns"></div>
+
+
+
+        </div>
+
+        <div class="chapter">
+
+
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                Novaol.startup("directMapToInclassGameWithFlowsAndRelayingEggs2600", "1");
+            });
+        </script>
+
+    </body>
+</html>
+

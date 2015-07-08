@@ -1,0 +1,32 @@
+Novaol.recordJSON({
+    title: "directMapToInclassGameWithFlowsAndRelayingEggs2600",
+    address: "rms@cs.oberlin.edu",
+    clock: {lo: 0, hi: 32, max: 1000, dt: 1.000000, method: "Euler", step: 1},
+//    background_color: "lightcyan",
+    visuals: function(hook, project, index){
+        var table = hook.append("table").attr("class", "dataTable");
+        var row = table.append('tr');
+        row.append('td')
+        .style('vertical-align', 'top')
+        .style('padding', '15px')
+        .append("div")
+        .attr("id", "currentSuccessfulSpawnPlot_"+project+"_"+index)
+        .attr('class', 'linechart')
+    },
+    params: function(project, index){return {
+        currentSuccessfulSpawnPlot: {
+            vizid: "currentSuccessfulSpawnPlot_"+project+"_"+index,
+            width: 500,
+            height: 350,
+            margin: {top: 40, right: 20, bottom: 40, left: 60},
+            autogen: true,
+            valueFunc: function(data){return data.val;},
+            textFunc: function(data){return data.time;},
+            lo: novaol.get("clock.lo"),
+            hi: globl[project].controls[index].simhi,
+            caption: "currentSuccessfulSpawnPlot",
+            stroke: "#0000ff",
+            init: function(){return this.currentSuccessfulSpawn;},
+        },
+    }}
+});
