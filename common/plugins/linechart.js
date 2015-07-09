@@ -16,7 +16,7 @@ function linechart(chartid, wd, ht, m, lo, hi, yF, xF, ylo, yhi, sp, comp, mc, c
 	var manColor = (mc)?mc:false;
 	var compareMode = (cmpMd)?cmpMd:false
 	var initialMode = (intlMode == "compare") ? 1 : 0;
-	var colors = cols;
+	var colors = cols || ["blue", "red", "green", "cyan", "magenta"];
 	var yLo = (ylo)?ylo:0, yHi = (yhi)?yhi:0;
 	var sep = (sp)?sp:100;
 	var caption = cap, legend = leg;
@@ -248,7 +248,7 @@ function linechart(chartid, wd, ht, m, lo, hi, yF, xF, ylo, yhi, sp, comp, mc, c
 			y.domain(yExtent);
 		} else {
 			var yExtents = new Array();
-			for (var i in Data1) {
+			for (var i = 0; i < Data1.length; i++) {
 				if (Data1[i].length == 0) continue;
 				yExtents[i] = d3.extent(Data1[i], yFunc);
 			}
@@ -306,7 +306,7 @@ function linechart(chartid, wd, ht, m, lo, hi, yF, xF, ylo, yhi, sp, comp, mc, c
 
 	function datComp(x, dat) {
 		var ans = null;
-		for (var j in dat) {
+		for (var j = 0; j < dat.length; j++) {
 			if (xFunc(dat[j]) == x) return yFunc(dat[j]);
 			if (xFunc(dat[j]) > x && j > 0) {
 				var x0 = xFunc(dat[j-1]);
@@ -331,7 +331,7 @@ function linechart(chartid, wd, ht, m, lo, hi, yF, xF, ylo, yhi, sp, comp, mc, c
 		if (manColor)
 			Data[0].stroke = getRadioValue(chartid1+"_colorButton");
 		if (sort) {
-			for (var i in xyDat) {
+			for (var i = 0; i < xyDat.length; i++) {
 				xyDat[i].sort(sortfns[sort]);
 			}
 		}

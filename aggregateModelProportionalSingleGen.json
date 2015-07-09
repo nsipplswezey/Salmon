@@ -1,0 +1,59 @@
+Novaol.recordJSON({
+    title: "aggregateModelProportionalSingleGen",
+    address: "rms@cs.oberlin.edu",
+    date: "Wed Jul 08 18:52:09 PDT 2015",
+    clock: {lo: 0, hi: 5, max: 1000, dt: 1.000000, method: "Euler", step: 1},
+    modcontrols: [[
+        {type: "slider", id: "smolt_Survival_Rate", text: "smolt_Survival_Rate", size: 6, min: 0.000000, max: 0.200000, value: 0.150000, step: 0.010000},
+        {type: "slider", id: "fry_Survival_Rate", text: "fry_Survival_Rate", size: 6, min: 0.000000, max: 0.150000, value: 0.080000, step: 0.010000},
+        {type: "slider", id: "egg_Survival_Rate", text: "egg_Survival_Rate", size: 6, min: 0.000000, max: 0.200000, value: 0.150000, step: 0.010000},
+    ],[
+        {type: "slider", id: "adult_Survival_Rate", text: "adult_Survival_Rate", size: 6, min: 0.000000, max: 1.000000, value: 0.450000, step: 0.010000},
+    ]],
+    visuals: function(hook, project, index){
+        var table = hook.append("table").attr("class", "dataTable");
+        var row = table.append('tr');
+        row.append('td')
+        .style('vertical-align', 'top')
+        .style('padding', '15px')
+        .append("div")
+        .attr("id", "current_Population_Graph_"+project+"_"+index)
+        .attr('class', 'linechart')
+        row.append('td')
+        .style('vertical-align', 'top')
+        .style('display', 'table')
+        .style('padding', '15px')
+        .append("div")
+        .attr("id", "current_Population_Table_"+project+"_"+index)
+        .attr('class', 'table')
+    },
+    params: function(project, index){return {
+        current_Population_Graph: {
+            vizid: "current_Population_Graph_"+project+"_"+index,
+            width: 500,
+            height: 350,
+            margin: {top: 40, right: 20, bottom: 40, left: 60},
+            autogen: true,
+            valueFunc: function(data){return data.val;},
+            textFunc: function(data){return data.time;},
+            lo: novaol.get("clock.lo"),
+            hi: globl[project].controls[index].simhi,
+            initialMode: "compare",
+            caption: "current_Population_Graph",
+            stroke: "#0000ff",
+            init: function(){return this.currentTotal;},
+        },
+        current_Population_Table: {
+            vizid: "current_Population_Table_"+project+"_"+index,
+            width: 500,
+            height: 350,
+            autogen: true,
+            caption: "current_Population_Table",
+            columns: ["Time", "currentTotal"],
+            valueFunc: function(data){return data.currentTotal;},
+            textFunc: function(data){return data.time},
+            key: 'currentTotal',
+            init: function(){return this.currentTotal;},
+        },
+    }}
+});

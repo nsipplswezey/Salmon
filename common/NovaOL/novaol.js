@@ -221,7 +221,7 @@ Novaol.prototype.populate = function(callback){
 
 	if ("wallpaper" in this.data) {
 		d3.select("body")
-		.attr("background", this.gitn(this.data.wallpaper));
+		.attr("background", "common/images/"+this.gitn(this.data.wallpaper));
 	}
 	else if ("background_color" in this.data) {
 		d3.select("body")
@@ -237,6 +237,12 @@ Novaol.prototype.populate = function(callback){
 
 	//Simulator controls
 	var tagg = "#SControls_"+this.tag;
+	if ("model_background" in this.data && this.index in this.data.model_background) {
+		d3.select("#"+this.tag).style("background-color", this.gitn(this.data.model_background[this.index]));
+	}
+	if ("model_wallpaper" in this.data && this.index in this.data.model_wallpaper) {
+		d3.select("#"+this.tag).style("background", "common/images/"+this.gitn(this.data.model_wallpaper[this.index]));
+	}
 	this.control(d3.select(tagg).append("table").append("tr"), "ncsliders", simcontrols);
 	this.buttons(d3.select(tagg).select("tr").append("td"), "ncbuttons", simbuttons);
 	this.control(d3.select(tagg).select("tr"), "ncsliders", this.timefield());
@@ -263,20 +269,27 @@ Novaol.prototype.populate = function(callback){
 	
 	//Author's signature
 	if ("address" in this.data) {
+		if (!("address" in globl)) globl.address = [];
 		if (Array.isArray(this.data.address)) {
-			d3.select("#address").selectAll(".addresses").data(this.data.address)
-			.enter().append("address").text(function(d){return d});
+			for (var i = 0; i < this.data.address.length; i++)
+				if (globl.address.indexOf(this.data.address[i]) < 0) globl.address.push(this.data.address[i]);
 		} else {
-			d3.select("#address").append("address").text(this.data.address);
+			if (globl.address.indexOf(this.data.address) < 0) globl.address.push(this.data.address);
 		}
 	}
 	
 	//Modification date
-	d3.select("#modified").text("Last Modified "+new Date().toString());
+	if ("date" in this.data)
+		d3.select("#modified").text("Last Modified "+this.data.date);
 
 	if (callback) callback();
 };
 
+Novaol.prototype.signoff = function() {
+	if (!("address" in globl)) return;
+	d3.select("#address").selectAll(".addresses").data(globl.address)
+	.enter().append("address").text(function(d){return d});
+}
 
 /**
  * Sets initial values of slider dom elements to initial values of sim and mod controls

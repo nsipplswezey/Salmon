@@ -115,9 +115,8 @@ Novaol.recordJS({
         },
         eggsLaid: {
             specifies: 'Sequence',
-            initial: 0,
+            initial: 2600,
             nonNegative: false,
-            next: 'nanCheck(this.spawningAdults * this.initialEggsLaidPerSpawningAdult)',
         },
         currentSuccessfulSpawn: {
             specifies: 'Term',
@@ -133,6 +132,14 @@ Novaol.recordJS({
             properties: function(){return novaol.getAll("params.currentSuccessfulSpawnPlot");},
             pins: {
                 inpt: function(){return this.currentSuccessfulSpawn;}
+            }
+        },
+        currentSuccessfulSpawnTable: {
+            specifies: "Plugin",
+            base: PL_Table,
+            properties: function(){return novaol.getAll("params.currentSuccessfulSpawnTable");},
+            pins: {
+                inpt: function(){return [this.currentSuccessfulSpawn]}
             }
         },
     },

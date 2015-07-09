@@ -2078,7 +2078,7 @@ function Clock(lo, hi, dt, method) {
 	this.current = lo;
 	this.flag = false;
 	this.newspeed = false;
-	this.multirun = false;
+	this.domultirun = false;
 	this.speed = 0;
 	this.method = (method) ? method : "Euler";
 	this.cleanup = function() {
@@ -2146,13 +2146,13 @@ Clock.prototype.run = function() {
 			Clock.curClock = null;
 			clearInterval(this.timer);
 			if (this.k) this.k.call(this.simulator.scope);
-			this.multirun = false;
+			this.domultirun = false;
 			this.newspeed = false;
 			return true;
 		}
 		this.step(this.iterate);
 		if (this.everyk) this.everyk.call(this.simulator.scope);
-		if (this.newspeed && !this.multirun) {
+		if (this.newspeed && !this.domultirun) {
 			this.newspeed = false;
 			this.runit();
 		}
@@ -2166,7 +2166,7 @@ Clock.prototype.run = function() {
 Clock.prototype.multirun = function() {
 	for (var i = 0; i < this.postInterval; i++) {
 		if (this.ping()) {
-			this.multirun = false;
+			this.domultirun= false;
 			return;
 		}
 	}
@@ -2185,10 +2185,12 @@ Clock.prototype.cont = function() {
 }
 
 Clock.prototype.runit = function() {
-	if (this.postInterval > 0) this.multirun = true;
 	clearInterval(this.timer);
-	this.timer = (this.postInterval) ? setInterval(this.multirun.bind(this), 0) :
-		setInterval(this.ping, this.speed)
+	if (this.postInterval > 0) {
+		this.domultirun = true;
+		this.timer = setInterval(this.multirun.bind(this), 0);		
+	} else 
+		this.timer = setInterval(this.ping, this.speed)
 }
 
 Clock.prototype.halt = function() {

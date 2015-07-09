@@ -1,8 +1,8 @@
 Novaol.recordJSON({
-    title: "directMapToInclassGameWithFlowsAndRelayingEggs2600",
+    title: "inclassGameSingleGen2600",
     address: "rms@cs.oberlin.edu",
-    clock: {lo: 0, hi: 32, max: 1000, dt: 1.000000, method: "Euler", step: 1},
-//    background_color: "lightcyan",
+    date: "Wed Jul 08 18:52:09 PDT 2015",
+    clock: {lo: 0, hi: 17, max: 1000, dt: 1.000000, method: "Euler", step: 1},
     visuals: function(hook, project, index){
         var table = hook.append("table").attr("class", "dataTable");
         var row = table.append('tr');
@@ -12,6 +12,13 @@ Novaol.recordJSON({
         .append("div")
         .attr("id", "currentSuccessfulSpawnPlot_"+project+"_"+index)
         .attr('class', 'linechart')
+        row.append('td')
+        .style('vertical-align', 'top')
+        .style('display', 'table')
+        .style('padding', '15px')
+        .append("div")
+        .attr("id", "currentSuccessfulSpawnTable_"+project+"_"+index)
+        .attr('class', 'table')
     },
     params: function(project, index){return {
         currentSuccessfulSpawnPlot: {
@@ -26,6 +33,18 @@ Novaol.recordJSON({
             hi: globl[project].controls[index].simhi,
             caption: "currentSuccessfulSpawnPlot",
             stroke: "#0000ff",
+            init: function(){return this.currentSuccessfulSpawn;},
+        },
+        currentSuccessfulSpawnTable: {
+            vizid: "currentSuccessfulSpawnTable_"+project+"_"+index,
+            width: 500,
+            height: 350,
+            autogen: true,
+            caption: "currentSuccessfulSpawnTable",
+            columns: ["Time", "currentSuccessfulSpawn"],
+            valueFunc: function(data){return data.currentSuccessfulSpawn;},
+            textFunc: function(data){return data.time},
+            key: 'currentSuccessfulSpawn',
             init: function(){return this.currentSuccessfulSpawn;},
         },
     }}

@@ -1,6 +1,12 @@
 Novaol.recordJS({
     specifies: "Capsule",
     components: {
+        spawners: {
+            specifies: 'Sequence',
+            initial: 100000,
+            nonNegative: false,
+            next: 'this.adult_Survival_Rate * this.adults',
+        },
         adults: {
             specifies: 'Sequence',
             initial: 0.0,
@@ -21,13 +27,16 @@ Novaol.recordJS({
         },
         eggs: {
             specifies: 'Sequence',
-            initial: 2000,
+            initial: 2500,
             nonNegative: false,
-            next: 0,
+            next: 'this.spawners * 2600',
         },
         currentTotal: {
             specifies: 'Term',
-            exp: 'this.eggs + this.fry + this.smolt + this.adults',
+            exp: 'this.eggs + this.fry + this.smolt + this.adults + this.spawners',
+        },
+        adult_Survival_Rate: {
+            specifies: "Slider",
         },
         smolt_Survival_Rate: {
             specifies: "Slider",
@@ -38,20 +47,20 @@ Novaol.recordJS({
         egg_Survival_Rate: {
             specifies: "Slider",
         },
-        each_StatePop: {
-            specifies: "Plugin",
-            base: PL_Linechart,
-            properties: function(){return novaol.getAll("params.each_StatePop");},
-            pins: {
-                inpt: function(){return [this.adults, this.eggs, this.fry, this.smolt]}
-            }
-        },
         current_Population_Graph: {
             specifies: "Plugin",
             base: PL_Linechart,
             properties: function(){return novaol.getAll("params.current_Population_Graph");},
             pins: {
                 inpt: function(){return this.currentTotal;}
+            }
+        },
+        current_Population_Table: {
+            specifies: "Plugin",
+            base: PL_Table,
+            properties: function(){return novaol.getAll("params.current_Population_Table");},
+            pins: {
+                inpt: function(){return [this.currentTotal]}
             }
         },
     },

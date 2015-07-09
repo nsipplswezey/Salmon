@@ -278,6 +278,7 @@ function PL_Linechart(name, props, pins) {
 	if (pins != null && "inpt" in pins) this.inpt.exp = pins.inpt;
 	this.props = props;
 	this.myData = new Array();
+	props.compareMode = (!("streams" in this.props) || props.streams == 1);
 	if (props.init == null) {
 		if ("streams" in this.props) {
 			var tmp = [];
