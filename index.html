@@ -87,25 +87,40 @@
 
         <div class="intro">
             <div class="columnLeft">
-                <p><i>"In science, if you know what you are doing, you should not be doing it.  In engineering, if you do not know what you are doing, you should not be doing it.  Of course, you seldom, if ever, see either pure state."</i></p>
-                <div class="quoteCitation">&mdash;Richard Hamming, <a href="http://www.amazon.com/dp/B000P2XFPA">The Art of Doing Science and Engineering</a></div>
+                <p>The world is complicated. How do we explore it? How do we use what we know to make decisions about what to do next? </p>
 
-                <p>How can we design systems when we don't know what we're doing?</p>
+                <p>We model the world. And most times, we model it without even thinking about it. We model intuitively and reflexively.</p>
 
-                <p>The most exciting engineering challenges lie on the <b>boundary of theory and the unknown</b>.  Not so unknown that they're hopeless, but not enough theory to predict the results of our decisions.  Systems at this boundary often rely on <i>emergent behavior</i> &mdash; high-level effects that arise indirectly from low-level interactions.</p>
+                <p>As we proceed through life, we collect a lot of data. And we have to organize it somehow. So we build mental models that try to organize the information we've collected. We often test those models against data, and we reevaluate our models based on what we observe.</p>
 
-                <p>When designing at this boundary, the challenge lies not in constructing the system, but in understanding it.   In the absence of theory, we must develop an <i>intuition</i> to guide our decisions.  The design process is thus one of exploration and discovery.</p>
+                <p>How did you know what time you had to leave the house to get to work this morning? Over your life time, you've collected a lot of data about being on time. You've likely built a pretty good model, and at some level maybe it includes how many miles you have to travel, how many minutes it takes to travel that distance, how much more time it takes if you hit traffic, and what consequences exist for being late. You've organized all that data into a model that helps you understand a complex real world system just enough to answer a question or make a decision.</p>
+
+                <p>"When should I leave home?"</p>
+
+                <p>Most complex systems rely on <i>emergent behavior</i> &mdash; high-level effects that arise indirectly from low-level interactions. Think about how traffic emerges from the interactions of <i>everyone</i> doing their best to answer the question "when should I leave home?"</p>
+
+                <p>Travel is a complex system for which we have a huge amount of experiential data. What about systems that are unfamiliar to us, systems where we don't have much experience or data? How do we explore those complex systems?</p>
+
+                <p>When exploring emergent systems the challenge lies in navigating a path towards progressively understanding more about it without getting lost. As we explore and discover we develop an <i>intuition</i> to guide our understanding.</p>
+
+                <p>Our intuition is typically built around creating new models of the system we're exploring. Modeling is thus a process of exploration and discovery.</p>
 
             </div>
             <div class="columnRight" style="width:401px;">
 
                 <p>How do we explore?  If you move to a new city, you might learn the territory by walking around.  Or you might peruse a map.  But far more effective than either is <i>both together</i> &mdash; a street-level experience with higher-level guidance.</p>
 
-                <p>Likewise, the most powerful way to gain insight into a system is by <i>moving between levels of abstraction</i>.  Many designers do this instinctively.  But it's easy to get stuck on the ground, experiencing concrete systems with no higher-level view.  It's also easy to get stuck in the clouds, working entirely with abstract equations or aggregate statistics.</p>
+                <p>Likewise, the most powerful way to gain insight into a system is by <i>moving between levels of abstraction</i>.  In real life, we do this instinctively. We know when we're late to school. We can stop and think about how many times we've been late this week. We try to find a patterns in what seems to be making us late. Or patterns in how to avoid the consequences of being late. We often do this implicity. And sometimes we get stuck. It's easy to get stuck on the ground, experiencing concrete day-to-day events with no higher-level view. "Ugh. I'm late again! I'm late every day!"  It's also easy to get stuck in the clouds, working entirely with abstract ideas, and lose track of the ground level details. "I'm late, but in the larger scheme of things, maybe I'm right on time."</p>
 
-                <p>This interactive essay presents the <b>ladder of abstraction</b>, a technique for thinking <i>explicitly</i> about these levels, so a designer can move among them consciously and confidently.</p>
+                <p>When we're working on problems further away from our direct every-day experience, we need to make our exploration explicit.</p>
 
-                <p>I believe that an essential skill of the modern system designer will be using the <i>interactive medium</i> to move fluidly around the ladder of abstraction.</p>
+                <p>This interactive essay implements two techniques for making our modeling and our thinking more explicit. </p>
+
+                <p>The first is called the <b>ladder of abstraction</b>, and specifically, it's a technique for thinking <i>explicitly</i> about these levels, so a thinker can move among abstractions consciously and confidently.</p>
+
+                <p>The second is called <b>iterative modeling</b>, and specifically, it's a technique for thinking <i>explicitly</i> about using past experience to build new models to explore new questions, so a thinker can move among many different related models consciously and confidently.</p>
+
+                <p>I share the belief that an essential skill of the modern citizen will be using the <i>interactive medium</i> to move fluidly around the ladder of abstraction, and thoughtfully between models, so that they can more rapidly build a deeper and more thoughtful understanding of complex systems.</p>
 
             </div>
             <div class="endOfColumns"></div>
@@ -119,13 +134,93 @@
         <!-- img class="novaIcon" src="Images/Icons/32x32.png" alt="" width="40" height="39" -->
 
         <div class="tangle" data-model="game">
+
+            <div class="chapter">
+                <div class="chapterHeader"><span>A Single Mother Coho</span></div>
+
+                <div class="columnLeft">
+
+                    <p><strong>Take a look at the narrative below</strong>. Any numbers you change by clicking and dragging left or right will update the whole progression of the coho life cycle. Read the story –don't skim– it's not long, it goes fast, and it's supported by data. Play with the numbers and see what intuition you generate. This story outlines the foundation modeling excercise for the class.</p>
+
+                    <i>
+                        <p> "In mid-November, a single female coho salmon lays <span data-var="eggLaying" class="TKAdjustableNumber" data-min="2500" data-max="2700" data-step="1" data-format="%.0f eggs"></span> near the headwaters of a short California coastal stream, and then she dies. With any luck, some of these eggs will become members of the next generation of coho salmon that will return to this stream to lay eggs of their own.
+                        </p>
+
+                        <p>
+                            <b>Place your <span data-var="eggLaying" data-format="%.0f eggs"></span> at the head waters, in the egg section. </b>
+                        </p>
+
+                        <p>It turns out that about <span data-var="fertilization" class="TKAdjustableNumber" data-min="700" data-max="900" data-step="1" data-format="%.0f of these eggs"></span> are never fertalized by male coho.
+                            Then <span data-var="fungusKillsEggs" class="TKAdjustableNumber" data-min="100" data-max="300" data-step="1" data-format="%.0f fertilized eggs"></span> become diseased with a common stream fungus.
+                            If that weren't enough, birds eat <span data-var="birdsEatEggs" class="TKAdjustableNumber" data-min="100" data-max="300" data-step="1" data-format="%.0f fertilized eggs"></span>.
+                            Then a heavy winter rainstorm hits the watershed, causing flooding and muddy stream conditions that wash <span data-var="rainAndMud" class="TKAdjustableNumber" data-min="350" data-max="450" data-step="1" data-format="%.0f eggs"></span> downstream where they're covered in tick mud, and they never have a chance to hatch.
+                        </p>
+
+                        <p>Approximately 40 days after the eggs were fertalized, they begin to hatch. From the eggs emerge small fish called <i>alevin</i>. They have small yolk sacs attached to their bodies, which they'll feed on for several weeks. Alevin stay very close to the bottom of the stream or under the gravel. <b>From the inital <span data-var="eggLaying" data-format="%.0f eggs"></span> only <span data-var="alevin" data-format="%.0f eggs"></span> survived to alevin stage</b>.
+                        </p>
+
+                        <p> Not all alevin emerge successfully and <span data-var="eggHatching" class="TKAdjustableNumber" data-min="250" data-max="350" data-step="1" data-format="%.0f alevin"></span> have deformed fins or other mutations that prevent them from surviving.
+                            Herons, ducks and kingfishers find alevin at the bottom of the stream and eat <span data-var="birdsEatAlevin" class="TKAdjustableNumber" data-min="250" data-max="350" data-step="1" data-format="%.0f alevin"></span>.
+                        </p>
+
+                        <p>Six months have passed since the eggs were first laid. The alevin have absorbed all of the yolk sac and are now called fry. <b>From the surving <span data-var="alevin" data-format="%.0f alevin"></span> only <span data-var="fry" data-format="%.0f alevin"></span> survived to fry stage.</b>
+                        </p>
+                        <p><b>Move your <span data-var="fry" data-format="%.0f new fry"></span> to the fry habitat.</b></p>
+                    </i>
+
+
+                </div>
+                <div class="columnRight">
+                    <i>
+
+                        <p> Fry swim faster without their yolk sacs, and they move away from the bottom of the stream and out to the edges of the stream, where herons, frogs and other fish eat <span data-var="heronsFrogsAndOtherFish" class="TKAdjustableNumber" data-min="180" data-max="200" data-step="1" data-format="%.0f fry"></span>.
+                            It is now the middle of the summer. The water temperatures are increasing as the stream level drops and <span data-var="summerWaterLevelDrop" class="TKAdjustableNumber" data-min="160" data-max="180" data-step="1" data-format="%.0f fry"></span> are cought in shallow pools and do not survive the higher temperatures.
+                        </p>
+
+                        <p> It's been a little less than a year since the surviving alevin became fry. The surviving fry are now a few inches long. They move downstream and take on a shiny, silver color. As they feed on insects, they reach 6 inches in length. They are now called smolts. The smolts are the first life stage that leaves freshwater and migrates out to the sea. They continue moving down the the river to the estuary. <b>From the surviving <span data-var="fry" data-format="%.0f fry"></span> only <span data-var="smolts" data-format="%.0f fry"></span> survived to smolt stage.</b>
+                        </p>
+
+                        <p>
+                            <b>Move your <span data-var="smolts" data-format="%.0f smolts"></span> to the smolt habitat.</b>
+                        </p>
+
+                        <p> <span data-var="fishKillerWhalesSeaLionsBirds" class="TKAdjustableNumber" data-min="20" data-max="30" data-step="1" data-format="%.0f smolts"></span> are eaten by other fish, killer whales, sea lions and birds.
+                            <b>From your surviving <span data-var="smolts" data-format="%.0f smolts"></span> only <span data-var="adults" data-format="%.0f smolts"></span> survived to the adult stage.</b>
+                        </p>
+
+                        <p>Smolts move to the open ocean and grow to adult size. They join schools of coho from other rivers. They spend 1 to 3 years feeding in the ocean and grow to about 2 feet long and about 35 pounds.
+
+                        </p>
+                        <p>
+                            <b>Move your <span data-var="adults" data-format="%.0f adults"></span> to the ocean habitat</b>
+                        </p>
+
+                        <p> A salmon fishing boat hooks several fish from a school of coho in the ocean. It turns out <span data-var="salmonFishingBoat" class="TKAdjustableNumber" data-min="1" data-max="3" data-step="1" data-format="%.0f those adult coho"></span> were from the spawn of your mother coho.
+                            Later on a pod of killer whales attacks another school of coho, and <span data-var="killerWhale" class="TKAdjustableNumber" data-min="1" data-max="3" data-step="1" data-format="%.0f those adult coho"></span> were from the spawn of your mother coho.
+                        </p>
+
+                        <p> <b>Of the <span data-var="adults" data-format="%.0f adults"></span> that made it to the ocean, only <span data-var="spawningAdults" data-format="%.0f adults"></span> survived to become spawning adults. </b>
+                        </p>
+
+
+                        <p>
+                            After 2 years in the ocean, those <span data-var="spawningAdults" data-format="%.0f spawning adults"></span> return to their native stream, and head back to their spawning grounds to lay their eggs. All coho salmon die after they spawn.
+                            The cycle begins again with a new batch of eggs."
+                        </p>
+                    </i>
+
+                </div>
+                <div class="endOfColumns"></div>
+
+            </div> <!-- End of chapter narrative -->
+
             <div class="chapter">
                 <div class="chapterHeader"><span>Let's Play a Game</span></div>
 
                 <div style="width:100px; height:20px;"></div>
 
                 <div class="columnLeft">
-                    <p>We'll start with an in-depth example &mdash; an event-based classroom game called <b>the salmon game</b>.</p>
+                    <p>The narrative above is a perfect starting place. Underneath that narrative is a model, where we start with a certain number of eggs, and then lose them as events in the spawning life cycle occur. This is called an event-based model. And now that you've gone through the model in text and interactive numbers, it's time for students to go through the model in an event-driven classroom game called <b>the salmon game</b>.</p>
 
                     <!--                     <span class="LadderActionLink" data-highlight="1 157 56">down</span>
 <span class="LadderActionLink" data-highlight="2 157 56">down</span>
@@ -135,9 +230,6 @@
                     <p>We'll keep track of these 2,600 eggs and the events and life stages through which they progress using the numbers and events described <strong>to the right</strong>. </p>
                     <p>Students will keep track of the 2,600 eggs using beans, and you'll guide them through the events. A 1lb. bag of pinto beans contains approximately 1300 beans. Two pounds = 2600 beans, the approximate average number of eggs laid by 1 female coho.</p>
                     <p>100 beans have a mass of approxmiately 34 grams. When removing beans that are not in groups of 100, have students remove the nearest 100 based on mass, and then count out the beans needed to reach the total.</p>
-
-
-                    <p><strong>Take a look at the narrative below</strong>. You can use your mouse to change any number in blue text by clicking and dragging left or right. Any numbers you change will update the whole progression of the coho life cylce.</p>
 
                 </div>
 
@@ -149,99 +241,14 @@
                         <div class="algorithmLine">Move individuals to their next habitat location</div>
                     </div>
 
-                    <div class="algorithm">
-                        <div class="algorithmHeader">Salmon Game Events:
-                            <div style="display:inline-block; position:relative; top:-19px; left:9px;"
-                                 class="Slider" data-var="time lockedTime" data-width="220" data-min="0" data-max="17" data-step="1" data-format="Event %.0f " data-margin="25"></div>
-                        </div>
-                        <div class="algorithmLine">Start with <span data-var="eggLaying" data-format="%.0f eggs"></span> at the spawning grounds.</div>
-                        <div class="algorithmLine">Remove <span data-var="fertilization" data-format="%.0f fertilized eggs"></span>: Not all eggs are fertalized by male coho.</div>
-                        <div class="algorithmLine">Remove <span data-var="fungusKillsEggs" data-format="%.0f fertilized eggs"></span>: Some eggs are diseased with fungus.</div>
-                        <div class="algorithmLine">Remove <span data-var="rainAndMud" data-format="%.0f fertilized eggs"></span>: Some eggs are eaten by birds.</div>
-                        <div class="algorithmLine">You're left with <span data-var="alevin" data-format="%.0f eggs"></span> that become alevin.</div>
-                        <div class="algorithmLine">Remove <span data-var="eggHatching" data-format="%.0f alevin"></span>: Some surviving fertilized eggs don't hatch.</div>
-                        <div class="algorithmLine">Remove <span data-var="birdsEatAlevin" data-format="%.0f alevin"></span>: Some alevin are eaten by birds.</div>
-                        <div class="algorithmLine">You're left with <span data-var="fry" data-format="%.0f alevin"></span> that become fry.</div>
-                        <div class="algorithmLine">Move your <span data-var="fry" data-format="%.0f new fry"></span> to the fry section.</div>
-                        <div class="algorithmLine">Remove <span data-var="heronsFrogsAndOtherFish" data-format="%.0f fry"></span>: Herons, frogs and other fish eat fry.</div>
-                        <div class="algorithmLine">Remove <span data-var="summerWaterLevelDrop" data-format="%.0f fry"></span>: Summer water level drops, fry die in shallow pools.</div>
-                        <div class="algorithmLine">You're left with <span data-var="smolts" data-format="%.0f fry"></span> that become smolt.</div>
-                        <div class="algorithmLine">Move your <span data-var="smolts" data-format="%.0f new smolts"></span> to the smolt section.</div>
-                        <div class="algorithmLine">Then move your <span data-var="smolts" data-format="%.0f new smolts"></span> to the estuary section.</div>
-                        <div class="algorithmLine">Remove <span data-var="fishKillerWhalesSeaLionsBirds" data-format="%.0f smolt"></span>: Killer whales, sea lions and birds eat smolt.</div>
-                        <div class="algorithmLine">You're left with <span data-var="adults" data-format="%.0f smolt"></span> that become adult coho salmon.</div>
-                        <div class="algorithmLine">Move your <span data-var="adults" data-format="%.0f new smolts"></span> into the ocean section.</div>
-                        <div class="algorithmLine">Remove <span data-var="salmonFishingBoat" data-format="%.0f adult coho salmon"></span>: some get fished by fishing boats.</div>
-                        <div class="algorithmLine">Remove <span data-var="killerWhale" data-format="%.0f adult coho salmon"></span>: some get eaten by killer whales.</div>
-                        <div class="algorithmLine">You're left with <span data-var="spawningAdults" data-format="%.0f adult coho salmon"></span> that become spawning adults.</div>
-                        <div class="algorithmLine">Move your <span data-var="spawningAdults" data-format="%.0f spawning adult coho salmon"></span> up to spawning grounds.</div>
-                        <div class="algorithmLine">Remove <span data-var="spawningAdults" data-format="%.0f adult coho salmon"></span>: adult coho die after spawning.</div>
-                        <div class="algorithmLine">You're left with <span data-var="adultsSurviveSpawning" data-format="%.0f adult coho salmon"></span> that survive spawning.</div>
-
+                    <div>
+                        <img class="placeHolder" src="Images/googleEarthLagunitasCreek.png" alt="" width="400" height="502">
                     </div>
+
                 </div>
 
                 <div class="endOfColumns"></div>
             </div><!-- End of chapter Let's Play A Game -->
-
-
-            <div class="chapter">
-                <div class="chapterHeader"><span>A Narrative</span></div>
-
-                <div class="columnLeft">
-
-                    <p> "A single female coho salmon lays <span data-var="eggLaying" class="TKAdjustableNumber" data-min="2500" data-max="3000" data-step="1" data-format="%.0f eggs"></span> near the headwaters of the river.
-                        <b>Place your fish in the egg/alevin section. </b>
-                    </p>
-
-                    <p>Some of the eggs are not successfully fertilized by male coho salmon, so <span data-var="fertilization" class="TKAdjustableNumber" data-min="600" data-max="1000" data-step="1" data-format="%.0f eggs"></span> are lost.
-                        Some fertilized eggs become diseased with a fungus and <span data-var="fungusKillsEggs" class="TKAdjustableNumber" data-min="100" data-max="300" data-step="1" data-format="%.0f eggs"></span> are lost.
-                        Some fertilized eggs are eaten by birds, so <span data-var="birdsEatEggs" class="TKAdjustableNumber" data-min="100" data-max="300" data-step="1" data-format="%.0f eggs"></span> are lost.
-                        A heavy rainstorm hits the watershed. Some eggs are washed downstream and others are covered in tick mud and suffocate. <span data-var="rainAndMud" class="TKAdjustableNumber" data-min="350" data-max="450" data-step="1" data-format="%.0f eggs"></span> are lost.
-                        Approximately 40 days have passed since th eggs were fertalized. Small fish called alevin start to emerge as the eggs hatch. They have small yolk sacs attached to their bodies. They will feed off the yolk sacs for several weeks. Alevin stay very close to the bottom of the stream or under the gravel. <b><span data-var="alevin" data-format="%.0f eggs"></span> survived</b> to alevin stage.
-                    </p>
-
-                    <p> Not all eggs hatch successfully. Some never emerge and other have mutations, like deformed fins. <span data-var="eggHatching" class="TKAdjustableNumber" data-min="250" data-max="350" data-step="1" data-format="%.0f alevin"></span> are lost.
-                        Herons, ducks and kingfishers find alevin at the bottom of the stream and eat <span data-var="eggHatching" class="TKAdjustableNumber" data-min="250" data-max="350" data-step="1" data-format="%.0f alevin"></span>.
-                        Six months have passed since the eggs were first laid. The alevin have absorbed all of the yolk sac and are now called fry. <b><span data-var="fry" data-format="%.0f alevin"></span> survived</b> to fry stage.
-                        <b>Move your fish to the fry section.</b>
-                    </p>
-
-
-                </div>
-                <div class="columnRight">
-
-                    <p> Fry swim faster without their yolk sacs, and they move away from the bottom of the stream and out to the edges. gerons, frogs and other fish eat <span data-var="heronsFrogsAndOtherFish" class="TKAdjustableNumber" data-min="180" data-max="200" data-step="1" data-format="%.0f fry"></span>.
-                        It is now the middle of the summer, and water temperatures are increasing as the stream level drops. <span data-var="summerWaterLevelDrop" class="TKAdjustableNumber" data-min="160" data-max="180" data-step="1" data-format="%.0f fry"></span> are cought in shallow pools and do not survive the higher temperatures.
-                        The surviving fry grow quickly and are now a few inches long. They move downstream and take on a shiny, silver color. As they feed on insects, they reach 6 inches in length. They are now called smolts. <b><span data-var="smolts" data-format="%.0f fry"></span> survived</b> to smolt stage.
-                        <b>Move your fish to the smolt section.</b>
-                    </p>
-
-                    <p> The smolts are now ready to migrate out to the sea. They have spent 1 full year in the river as freshwater fish. They begin by moving down the estuary to the river.
-                        <b>Move your fish to the estuary section.</b>
-                    </p>
-
-                    <p> <span data-var="fishKillerWhalesSeaLionsBirds" class="TKAdjustableNumber" data-min="20" data-max="30" data-step="1" data-format="%.0f smolts"></span> are eaten by other fish, killer whales, sea lions and birds.
-                        <b><span data-var="adults" data-format="%.0f smolts"></span> survived </b> to the adult stage.
-                        Smolts move to the open ocean and grow to adult size. They join schools of coho from other rivers. They spend 1 to 3 years feeding in the ocean and grow to about 2 feet long and about 35 pounds.
-                        <b>Move your fish to the ocean section</b>
-                    </p>
-
-                    <p> A salmon fishing boat hooks several fish from a school of coho in the ocean. <span data-var="salmonFishingBoat" class="TKAdjustableNumber" data-min="1" data-max="3" data-step="1" data-format="%.0f those adult coho"></span> were from the spawn of your mother coho.
-                        A pod of killer whales attacks the school of coho, <span data-var="killerWhale" class="TKAdjustableNumber" data-min="1" data-max="3" data-step="1" data-format="%.0f those adult coho"></span> were from the spawn of your mother coho.
-                        In general, 0 to 10 eggs from one pair of coho salmon will survive to become spawning adults.
-                        After 2 years in the ocean, the remaining fish return to their native stream, and head back to their spawning grounds to lay their eggs. All coho salmon die after they spawn.
-                        The cycle begins again with a new batch of eggs."
-                    </p>
-                    <p> The simulation</p>
-
-                </div>
-                <div class="endOfColumns"></div>
-
-
-
-
-            </div> <!-- End of chapter narrative -->
         </div> <!-- End of game tangle -->
 
 
@@ -428,10 +435,10 @@
                             <div style="display:inline-block; position:relative; top:-20px; left:9px;"
                                  class="Slider" data-var="birdsEatEggs lockedBirdsEatEggs" data-width="330" data-min="100" data-max="300" data-step="1" data-format="%.0f eggs" data-margin="25"></div>
                         </div>
-
                     </div>
-
                     <div class="endOfColumns"></div>
+
+
 
 
                 </div>
@@ -439,7 +446,61 @@
         </div>
 
         <div class="chapter">
-            <!-- Model Content -->
+            <div class="columnLeft">
+                <p><i>"In science, if you know what you are doing, you should not be doing it.  In engineering, if you do not know what you are doing, you should not be doing it.  Of course, you seldom, if ever, see either pure state."</i></p>
+                <div class="quoteCitation">&mdash;Richard Hamming, <a href="http://www.amazon.com/dp/B000P2XFPA">The Art of Doing Science and Engineering</a></div>
+
+                <p>How can we design systems when we don't know what we're doing?</p>
+
+                <p>The most exciting engineering challenges lie on the <b>boundary of theory and the unknown</b>.  Not so unknown that they're hopeless, but not enough theory to predict the results of our decisions.  Systems at this boundary often rely on <i>emergent behavior</i> &mdash; high-level effects that arise indirectly from low-level interactions.</p>
+
+                <p>When designing at this boundary, the challenge lies not in constructing the system, but in understanding it.   In the absence of theory, we must develop an <i>intuition</i> to guide our decisions.  The design process is thus one of exploration and discovery.</p>
+
+            </div>
+            <div class="columnRight" style="width:401px;">
+
+                <p>How do we explore?  If you move to a new city, you might learn the territory by walking around.  Or you might peruse a map.  But far more effective than either is <i>both together</i> &mdash; a street-level experience with higher-level guidance.</p>
+
+                <p>Likewise, the most powerful way to gain insight into a system is by <i>moving between levels of abstraction</i>.  Many designers do this instinctively.  But it's easy to get stuck on the ground, experiencing concrete systems with no higher-level view.  It's also easy to get stuck in the clouds, working entirely with abstract equations or aggregate statistics.</p>
+
+                <p>This interactive essay presents the <b>ladder of abstraction</b>, a technique for thinking <i>explicitly</i> about these levels, so a designer can move among them consciously and confidently.</p>
+
+                <p>I believe that an essential skill of the modern system designer will be using the <i>interactive medium</i> to move fluidly around the ladder of abstraction.</p>
+
+
+                <div class="algorithm">
+                    <div class="algorithmHeader">Salmon Game Events:
+                        <div style="display:inline-block; position:relative; top:-19px; left:9px;"
+                             class="Slider" data-var="time lockedTime" data-width="220" data-min="0" data-max="17" data-step="1" data-format="Event %.0f " data-margin="25"></div>
+                    </div>
+                    <div class="algorithmLine">Start with <span data-var="eggLaying" data-format="%.0f eggs"></span> at the spawning grounds.</div>
+                    <div class="algorithmLine">Remove <span data-var="fertilization" data-format="%.0f fertilized eggs"></span>: Not all eggs are fertalized by male coho.</div>
+                    <div class="algorithmLine">Remove <span data-var="fungusKillsEggs" data-format="%.0f fertilized eggs"></span>: Some eggs are diseased with fungus.</div>
+                    <div class="algorithmLine">Remove <span data-var="rainAndMud" data-format="%.0f fertilized eggs"></span>: Some eggs are eaten by birds.</div>
+                    <div class="algorithmLine">You're left with <span data-var="alevin" data-format="%.0f eggs"></span> that become alevin.</div>
+                    <div class="algorithmLine">Remove <span data-var="eggHatching" data-format="%.0f alevin"></span>: Some surviving fertilized eggs don't hatch.</div>
+                    <div class="algorithmLine">Remove <span data-var="birdsEatAlevin" data-format="%.0f alevin"></span>: Some alevin are eaten by birds.</div>
+                    <div class="algorithmLine">You're left with <span data-var="fry" data-format="%.0f alevin"></span> that become fry.</div>
+                    <div class="algorithmLine">Move your <span data-var="fry" data-format="%.0f new fry"></span> to the fry section.</div>
+                    <div class="algorithmLine">Remove <span data-var="heronsFrogsAndOtherFish" data-format="%.0f fry"></span>: Herons, frogs and other fish eat fry.</div>
+                    <div class="algorithmLine">Remove <span data-var="summerWaterLevelDrop" data-format="%.0f fry"></span>: Summer water level drops, fry die in shallow pools.</div>
+                    <div class="algorithmLine">You're left with <span data-var="smolts" data-format="%.0f fry"></span> that become smolt.</div>
+                    <div class="algorithmLine">Move your <span data-var="smolts" data-format="%.0f new smolts"></span> to the smolt section.</div>
+                    <div class="algorithmLine">Then move your <span data-var="smolts" data-format="%.0f new smolts"></span> to the estuary section.</div>
+                    <div class="algorithmLine">Remove <span data-var="fishKillerWhalesSeaLionsBirds" data-format="%.0f smolt"></span>: Killer whales, sea lions and birds eat smolt.</div>
+                    <div class="algorithmLine">You're left with <span data-var="adults" data-format="%.0f smolt"></span> that become adult coho salmon.</div>
+                    <div class="algorithmLine">Move your <span data-var="adults" data-format="%.0f new smolts"></span> into the ocean section.</div>
+                    <div class="algorithmLine">Remove <span data-var="salmonFishingBoat" data-format="%.0f adult coho salmon"></span>: some get fished by fishing boats.</div>
+                    <div class="algorithmLine">Remove <span data-var="killerWhale" data-format="%.0f adult coho salmon"></span>: some get eaten by killer whales.</div>
+                    <div class="algorithmLine">You're left with <span data-var="spawningAdults" data-format="%.0f adult coho salmon"></span> that become spawning adults.</div>
+                    <div class="algorithmLine">Move your <span data-var="spawningAdults" data-format="%.0f spawning adult coho salmon"></span> up to spawning grounds.</div>
+                    <div class="algorithmLine">Remove <span data-var="spawningAdults" data-format="%.0f adult coho salmon"></span>: adult coho die after spawning.</div>
+                    <div class="algorithmLine">You're left with <span data-var="adultsSurviveSpawning" data-format="%.0f adult coho salmon"></span> that survive spawning.</div>
+
+                </div>
+
+            </div>
+            <div class="endOfColumns"></div>
         </div>
 
 

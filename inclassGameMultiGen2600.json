@@ -1,7 +1,7 @@
 Novaol.recordJSON({
     title: "inclassGameMultiGen2600",
     address: "rms@cs.oberlin.edu",
-    date: "Wed Jul 08 18:52:09 PDT 2015",
+    date: "Wed Jul 08 21:24:59 PDT 2015",
     clock: {lo: 0, hi: 35, max: 1000, dt: 1.000000, method: "Euler", step: 1},
     visuals: function(hook, project, index){
         var table = hook.append("table").attr("class", "dataTable");

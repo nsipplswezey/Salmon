@@ -29,7 +29,7 @@ Novaol.recordJS({
             specifies: 'Sequence',
             initial: 2500,
             nonNegative: false,
-            next: 'this.spawners * 2600',
+            next: '(this.spawners / 2) * 2600',
         },
         currentTotal: {
             specifies: 'Term',

@@ -1,7 +1,7 @@
 Novaol.recordJSON({
     title: "aggregateModelProportionalSingleGen",
     address: "rms@cs.oberlin.edu",
-    date: "Wed Jul 08 18:52:09 PDT 2015",
+    date: "Wed Jul 08 21:24:59 PDT 2015",
     clock: {lo: 0, hi: 5, max: 1000, dt: 1.000000, method: "Euler", step: 1},
     modcontrols: [[
         {type: "slider", id: "smolt_Survival_Rate", text: "smolt_Survival_Rate", size: 6, min: 0.000000, max: 0.200000, value: 0.150000, step: 0.010000},
