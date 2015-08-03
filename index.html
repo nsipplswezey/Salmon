@@ -71,7 +71,7 @@
     <body>
 
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-        <!-- Page Header: The Circle Game -->
+        <!-- Page Header: The Salmon Game -->
 
 
         <div class="headerBackground"></div>
@@ -244,7 +244,7 @@
                             </p>
 
                             <p> A salmon fishing boat hooks several fish from a school of coho in the ocean. It turns out <span data-var="salmonFishingBoat" class="TKAdjustableNumber" data-min="1" data-max="3" data-step="1" data-format="%.0f those adult coho"></span> were from the spawn of your mother coho.
-                                Later on a pod of killer whales attacks another school of coho, and <span data-var="killerWhale" class="TKAdjustableNumber" data-min="1" data-max="3" data-step="1" data-format="%.0f those adult coho"></span> were from the spawn of your mother coho.
+                                Later on a pod of killer whales attacks another school of coho, and <span data-var="killerWhale" class="TKAdjustableNumber" data-min="1" data-max="3" data-step="1" data-format="%.0f of those adult coho"></span> were from the spawn of your mother coho.
                             </p>
 
                             <p> <b>Of the <span data-var="adults" data-format="%.0f adults"></span> that made it to the ocean, only <span data-var="spawningAdults" data-format="%.0f adults"></span> survived to become spawning adults. </b>
@@ -260,7 +260,39 @@
                     </div>
                     <div class="endOfColumns"></div>
 
-                </div> <!-- End of chapter narrative -->
+                </div> <!-- End of chapter narrative tangle -->
+
+
+
+                <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+                <!-- Model Content: In-class game -->
+                <div class="chapter">
+                    <div class="chapterHeader"><span>A computational simulation</span></div>
+
+                    <div class="columnLeft">
+                        <p>Below is a computational simulation that matches the above simulation using the initial values. Click <strong>run</strong> to run the simlation.</p>
+                    </div>
+                    <div class="columnRight">
+
+                    </div>
+                    <div class="endOfColumns"></div>
+
+
+
+                    <div id="inclassGameSingleGen2600_1"></div>
+
+
+                    <div class="columnLeft">
+                        <p>What do you notice now that the simulation data is in a plot, rather than text?</p>
+                    </div>
+
+                    <div class="columnRight">
+                    </div>
+
+                    <div class="endOfColumns"></div>
+                </div>
+
+
 
                 <div class="chapter">
                     <div class="chapterHeader"><span>Let's Play a Game</span></div>
@@ -310,59 +342,129 @@
 
                 <div class="columnLeft">
 
-                    <p>This lesson follows a specific pedagogical design for asking questions, using models, generating explanations and creating argumentats based on evidence.</p>
+                    <p>This lesson follows a specific and consistent pedagogical design for asking questions, using models, generating explanations and creating argumentats based on evidence.</p>
 
-                    <p>The question: <strong>Why do salmon lay so many eggs?</strong></p>
-                    <p>The model: </p>
-                    <p>The assumptions the model makes: </p>
-                    <p>The discrepant event of the lesson: "Wow! All the eggs died!" </p>
-                    <p>Explanation: The explanation attempts to answer the question "Why do salmon lay so many eggs?" The game points students towards an early explanation like "the salmon face a lot of adversity."</p>
-                    <p>The lesson doesn't guide students towards the reality that "the salmon provide nourishment for the watershed, which is a crucial ecosystem service." Salmon are actually the drivers of of a very complex ecosystem, though that explanation is not the intention of the lesson.</p>
-                    <p>Answer: Since so many salmon die before reaching spawning adulthood(eureka moment/discrepant event), and so laying more eggs increases the probability for successful reproduction and a sustaining population.</p>
+                    <p>The pedagogical design is as follows:</p>
+                </div>
+                <div class="endOfColumns"></div>
 
-                    <p>Argument Question 1: "Where in the salmon life cycle would you intervene to have the biggest impact?"</p>
-                    <p>Example Claim: "Improving the spawning grounds would make the biggest improvement to salmon population survival."</p>
-                    <p>Example Evidence: "The graph shows that most of the salmon die as eggs/alevin."</p>
-                    <p>Example Reasoning: "Since most salmon die as eggs, improving the quality of spawning grounds would bolster the population the most."</p>
+                <div class="columnLeft">
 
-                    <p>The above is a sound agrument supported by evidence from the provided data-supported model of salmon populations.</p>
-
+                    <p>The question: Every computational model is designed to answer a single specific question. If you're question changes, then your model must also change. <strong>To the right</strong> is the specific question that this model attempts to answer.</p>
 
                 </div>
 
-
-                <div class="columnRight" style="width:401px;">
+                <div class="columnRight" style="width:401px">
 
                     <div class="algorithm">
                         <div class="algorithmHeader">The question:</div>
                         <div class="algorithmLine"> Why do salmon lay so many eggs? </div>
                     </div>
+                </div>
+                <div class="endOfColumns"></div>
+
+
+
+                <div class="columnLeft">
+
+                    <p>The assumptions: Every computational model is build upon specific assumptions that simplify the complexity of the real world so that we can answer our specific question. <strong>To the right</strong> are some of the assumptions implicit in our model.</p>
+                </div>
+
+                <div class="columnRight" style="width:401px">
+
+                    <div class="algorithm">
+                        <div class="algorithmHeader">The assumptions:</div>
+                        <div class="algorithmLine"> We're only following a single salmon. </div>
+                        <div class="algorithmLine"> Other salmon are similar to this salmon. </div>
+
+                    </div>
+                </div>
+                <div class="endOfColumns"></div>
+
+
+
+
+                <div class="columnLeft">
+                    <p>The discrepant event: Every lesson built around a computational model has a discrepant event. This event is often a suprise, "aha!" or eureka moment, where the model user generates an insight about the question they're asking. <strong>To the right</strong> is an example of the kind of discrepant event a student might experience during this lesson. </p>
+
+                </div>
+
+                <div class="columnRight" style="width:401px">
 
                     <div class="algorithm">
                         <div class="algorithmHeader">Discrepant event:</div>
                         <div class="algorithmLine"> Wow! All the eggs died! </div>
                     </div>
+                </div>
+                <div class="endOfColumns"></div>
 
+
+
+
+                <div class="columnLeft">
+                    <p>The explanation: Models are often used to help us explain <i>why</i> something happens in a way that matches our observations. In this case a students explanation attempts to answer "Why do salmon lay so many eggs?" <strong>To the right</strong> are a couple example explanations, both that a student might provide and that a teacher might provide.</p>
+                </div>
+
+                <div class="columnRight" style="width:401px">
                     <div class="algorithm">
                         <div class="algorithmHeader">Explanation:</div>
                         <div class="algorithmLine">Student Example Explanation: "Salmon lay so many eggs because their eggs face a lot of adversity on the journey to becoming adult coho salmon that return to spawn!" </div>
                         <div class="algorithmLine">Teacher Example Explanation: "Since so many salmon die before reaching spawning adulthood, laying more eggs increases the probability for successful reproduction and a sustaining population of salmon" </div>
                     </div>
 
+                </div>
+                <div class="endOfColumns"></div>
+
+
+
+                <div class="columnLeft">
+                    <p>The argument: An explanation is different from an argument. The explanation attempts to coherently organize current knowledge. The argument attempts to assert <strong>new knowledge</strong> based on evidence. An argument is often prompted by a decision-making question. <strong>To the right</strong> is an argument question that students could respond to using evidence from this simulation.</p>
+                </div>
+
+                <div class="columnRight" style="width:401px">
+
                     <div class="algorithm">
-                        <div class="algorithmHeader">Argument Question 1:</div>
+                        <div class="algorithmHeader">Argument Question:</div>
                         <div class="algorithmLine">"Where in the salmon life cycle would you intervene to have the biggest impact on salmon populations?" </div>
                     </div>
 
+                </div>
+                <div class="endOfColumns"></div>
+
+
+                <div class="columnLeft">
+                    <p>The argument claim: The argument claim is an assertion that responds to the argument question. <strong>To the right</strong> is an example claim."</p>
+                    <p>The argument evidence: The argument evidence is a reference to data or observations that support the claim. <strong>To the right</strong> is an aexample of evidence that supports the example claim.</p>
+                    <p>The argument reasoning: The argument reasoning is a statement that links the claim and the evidence in a way that attempts to affirm the link between to two. <strong>To the right</strong> is an example of reasoning statement that links the example claim to the example evidence. </p>
+                </div>
+
+                <div class="columnRight" stype="width:401px">
                     <div class="algorithm">
                         <div class="algorithmHeader">Claim-Evidence-Reasoning Response:</div>
                         <div class="algorithmLine"> Example claim: "Improving the spawning grounds would make the biggest improvement to salmon population survival." </div>
                         <div class="algorithmLine"> Example evidence: "The data from this model shows that most of the salmon die as eggs/alevin." </div>
                         <div class="algorithmLine"> Example reasoning: "Since most salmon die as eggs, improving the quality of spawning grounds would bolster the population the most." </div>
                     </div>
+                </div>
 
+                <div class="endOfColumns"></div>
+
+
+
+                <div class="columnLeft">
+                    <p>The extension: A good computational model will often <i>motive more new questions or ideas</i>. It's important to take advantage of the opportunity to extend the present investigation to new, different and interesting ideas.  The extension invites students to think more creatively, broadly and/or deeply about the system they are exploring, with the goal of motivating future exploration, curiosity, discovery and excitement. Scientific inquiry can be a prfound and exciting open-ended endevour, and the extension is the place to leave students with a sense of wonder about the world. </p>
+                </div>
+
+
+                <div class="columnRight" style="width:401px;">
+                    <div class="algorithm">
+                        <div class="algorithmHeader">Possible Extensions:</div>
+                        <div class="algorithmLine"> The salmon provide nourishment for the watershed, which is a crucial ecosystem service. So few salmon survive precisely because so many other animals depend on eating them. Salmon are actually the drivers of of a very complex ecosystem. </div>
+                        <div class="algorithmLine"> The salmon are a linneage of fish species that have been on the planet earth for over 5 million years. Their spawning behavior is an adaptation that emerged due to selective pressure at the scale of evolutionary time. Yet now, very suddenty, they are under dramatically different selective pressure: humans.</div>
+                    </div>
 
                 </div>
+
                 <div class="endOfColumns"></div>
 
             </div>
@@ -408,6 +510,10 @@
             </div>
 
 
+            <div class="chapter">
+                <div class="chapterHeader"><span>End of Lesson 1 Material: Additional Material Below</span></div>
+            </div>
+
 
             <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
             <!-- Chapter Abstracting 12 events into 3 proportions -->
@@ -445,26 +551,6 @@
 
 
                 <div class="endOfColumns"></div>
-
-                <!-- Model Content -->
-                <div id="inclassGameSingleGen2600_1"></div>
-
-
-                <div class="columnLeft">
-                    <p>Now that we have a clear and detailed foundation model about the number of surviving eggs, we can start exploring new questions.</p>
-
-                    <p>If 2 out of 2,600 eggs survive, how will the coho population grow or decline?</p>
-
-                    <p>If we build a dam that makes it more difficult for coho to reach the spawning ground, or for new developing coho to reach the sea, will less than 2 out of 2,600 eggs survive to spawn again? If less than 2 out of 2,600 eggs return to spawn, will our coho population grow or decline over multiple generations?</p>
-
-                    <p>The model below feeds the surviving coho from our first model back in as spawning adults. Each spawning adult lays 2,600 eggs, and then the cycle begins again.</p>
-
-                    <p>Click the <strong>run button</strong>. What do you notice?</p>
-                </div>
-
-                <div class="columnRight">
-                    <p>Does this model support the conclusion that salmon populations grow under these conditions?</p>
-                </div>
 
 
 
