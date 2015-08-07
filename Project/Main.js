@@ -147,27 +147,27 @@
       update: function(){
         //eggs
         this.eggsLaid = this.eggLaying;
-        this.eggsFertalized = this.eggsLaid - this.fertilization;
-        this.eggsSurvivedFungus = this.eggsFertalized - this.fungusKillsEggs;
-        this.eggsSurvivedBirds = this.eggsSurvivedFungus - this.birdsEatEggs;
-        this.eggsSurvivedRainAndMud = this.eggsSurvivedBirds - this.rainAndMud;
+        this.eggsFertalized = minZero(this.eggsLaid - this.fertilization);
+        this.eggsSurvivedFungus = minZero(this.eggsFertalized - this.fungusKillsEggs);
+        this.eggsSurvivedBirds = minZero(this.eggsSurvivedFungus - this.birdsEatEggs);
+        this.eggsSurvivedRainAndMud = minZero(this.eggsSurvivedBirds - this.rainAndMud);
         //alevin
-        this.alevin = this.eggsSurvivedRainAndMud - this.initialAlevin;
-        this.eggsHatchedSuccessfully = this.alevin - this.eggHatching;
-        this.alevinSurviveHeronsDucksKingfishers = this.eggsHatchedSuccessfully - this.birdsEatAlevin;
+        this.alevin = minZero(this.eggsSurvivedRainAndMud - this.initialAlevin);
+        this.eggsHatchedSuccessfully = minZero(this.alevin - this.eggHatching);
+        this.alevinSurviveHeronsDucksKingfishers = minZero(this.eggsHatchedSuccessfully - this.birdsEatAlevin);
         //fry
-        this.fry = this.alevinSurviveHeronsDucksKingfishers - this.initialFry;
-        this.frySurvivedHeronsFrogsOtherFish = this.fry - this.heronsFrogsAndOtherFish;
-        this.frySurvivedSummerStreamLevelDrop = this.frySurvivedHeronsFrogsOtherFish - this.summerWaterLevelDrop;
+        this.fry = minZero(this.alevinSurviveHeronsDucksKingfishers - this.initialFry);
+        this.frySurvivedHeronsFrogsOtherFish = minZero(this.fry - this.heronsFrogsAndOtherFish);
+        this.frySurvivedSummerStreamLevelDrop = minZero(this.frySurvivedHeronsFrogsOtherFish - this.summerWaterLevelDrop);
         //smolt
         this.smolts = this.frySurvivedSummerStreamLevelDrop - this.initialSmolts;
-        this.smoltsSurvivedOtherFishKillerWhalesSeaLionsBirds = this.smolts - this.fishKillerWhalesSeaLionsBirds;
+        this.smoltsSurvivedOtherFishKillerWhalesSeaLionsBirds = minZero(this.smolts - this.fishKillerWhalesSeaLionsBirds);
         //adult
-        this.adults = this.smoltsSurvivedOtherFishKillerWhalesSeaLionsBirds - this.initialAdults;
-        this.adultsSurvivedSalmonFishingBoat = this.adults - this.salmonFishingBoat;
-        this.adultsSurvivedKillerWhale = this.adultsSurvivedSalmonFishingBoat - this.killerWhale;
+        this.adults = minZero(this.smoltsSurvivedOtherFishKillerWhalesSeaLionsBirds - this.initialAdults);
+        this.adultsSurvivedSalmonFishingBoat = minZero(this.adults - this.salmonFishingBoat);
+        this.adultsSurvivedKillerWhale = minZero(this.adultsSurvivedSalmonFishingBoat - this.killerWhale);
         //spawning adult
-        this.spawningAdults = this.adultsSurvivedKillerWhale - this.initialSpawningAdults;
+        this.spawningAdults = minZero(this.adultsSurvivedKillerWhale - this.initialSpawningAdults);
         this.adultsSurviveSpawning = this.spawningAdults - this.spawningAdults;
 
 

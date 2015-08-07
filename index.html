@@ -1,7 +1,8 @@
+<!DOCTYPE html>
+
 <html>
     <meta charset="utf-8">
     <head>
-
         <!-- Utilities -->
         <script src="common/util/d3.min.js"></script>
         <script src="common/util/underscore.js"></script>
@@ -33,6 +34,14 @@
         <script src="inclassGameSingleGen2600.js" data-project="inclassGameSingleGen2600"></script>
 
 
+        <!--            Header Video -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>
+            var $jq = jQuery.noConflict();
+        </script>
+        <script src="Header/modernizr.js"></script>
+        <script src="Header/script.js"></script>
+
         <!--            Tangle -->
         <script type="text/javascript" src="Tangle.js"></script>
 
@@ -52,6 +61,7 @@
         <!-- Tangle Project -->
         <script type="text/javascript" src="Project/Main.js"></script>
         <script type="text/javascript" src="Project/Slider.js"></script>
+        <script type="text/javascript" src="Project/Misc.js"></script>
 
 
         <!-- Nova Styles -->
@@ -73,8 +83,26 @@
         <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <!-- Page Header: The Salmon Game -->
 
+        <div class="header-video">
+            <img src="Video/coho.jpeg"
+                 class="header-video__media"
+                 data-video-URL="https://www.youtube.com/embed/5HMp-GXjHtg"
+                 data-teaser="Video/SalmonSpawning"
+                 data-video-width="560"
+                 data-video-height="315">
+            <a href="https://www.youtube.com/embed/5HMp-GXjHtg" class="header-video__play-trigger" id="header-video__play-trigger">Play video</a>
+            <button type="button" class="header-video__close-trigger" id="header-video__close-trigger">Close video</button>
+        </div>
 
-        <div class="headerBackground"></div>
+
+
+        <!--
+<video autoplay loop poster="Video/coho.jpeg" id="headerVideo" class="headerBackground">
+<source src= "Video/SalmonSpawning.webm" type="video/webm">
+<source src= "Video/SalmonSpawning.mp4" type="video/mp4">
+</video>
+-->
+
 
         <div class="header">
             <h1> The Salmon Game </h1>
@@ -86,6 +114,16 @@
         <!-- Page Intro: Why Do This Lesson? -->
 
         <div class="intro">
+
+            <div class="columnLeft">
+                <p>The salmon model creates an engagement activity followed by explanation and exploration activities in the 5E pedagogical model.  These lessons complement investigations in the NGSS performance expectations for ecosystems, human impacts and evolution.  The primary focus of the unit is on the probability of sustaining populations through successful reproduction.  The unit also provides connections to several of the science practices:  engaging argument from evidence, constructing explanations, using mathematics and computational thinking, and analyzing and interpreting data.</p>
+            </div>
+            <div class="columnRight" style="width:401px;">
+
+            </div>
+            <div class="endOfColumns"></div>
+
+
             <div class="columnLeft">
                 <p>This lesson covers the 7th grade standards <strong>to the right.</strong></p>
 
@@ -160,16 +198,15 @@
                 <div class="chapterHeader"><span>How To Run The Lesson</span></div>
 
                 <div class="columnLeft">
-                    <p>Play the game (15 minutes)</p>
-                    <p>Run the computational model scenarios(15 minutes)</p>
-                    <p>Formulate an explanation (5 minutes)</p>
-                    <p>Create an argument (5 minutes)</p>
-                    <p>Support your argument with data from the model (5 minutes)</p>
-                    <p>End the lesson with a short discussion about the broader implications of what we learned from this lesson (5 minutes)</p>
-
+                    <p>Go through the salmon game scenario as a teacher-guided activity with the whole class.  <strong>Click on the image to the right </strong> for the game slide show and student data sheets.</p>
+                    <p>Repeat the salmon game scenario with changing values using the “Single Mother Coho” narrative.  See graph below for real-time updates.</p>
+                    <p>Go to “Discrepant events, Explanations and Arguments” section for links to follow-up activities and student handouts. (Links to Explanation and Argumentation Student Handouts.)</p>
 
                 </div>
                 <div class="columnRight" style="width:401px;">
+                    <div>
+                        <a href="https://drive.google.com/folderview?id=0B61JMX9lcwC1fmJZWXJ1RVdldzZiZEQwSzVidkpkeTZvYjA5ajJyLXhlbUozREVBQzRFbTQ&usp=sharing"><img class="placeHolder" src="Images/SlideShow.png" alt="" width="400" height="190"></a>
+                    </div>
 
 
                 </div>
@@ -191,7 +228,7 @@
                         <p><strong>Take a look at the narrative below</strong>. Any numbers you change by clicking and dragging left or right will update the whole progression of the coho life cycle. Read the story –don't skim– it's not long, it goes fast, and it's supported by data. Play with the numbers and see what intuition you generate. This story outlines the foundation modeling excercise for the class.</p>
 
                         <i>
-                            <p> "In mid-November, a single female coho salmon lays <span data-var="eggLaying" class="TKAdjustableNumber" data-min="2500" data-max="2700" data-step="1" data-format="%.0f eggs"></span> near the headwaters of a short California coastal stream, and then she dies. With any luck, some of these eggs will become members of the next generation of coho salmon that will return to this stream to lay eggs of their own.
+                            <p> "In mid-November, a single female coho salmon lays <span data-var="eggLaying" class="TKAdjustableNumber" data-min="2600" data-max="2601" data-step="1" data-format="%.0f eggs"></span> near the headwaters of a short California coastal stream, and then she dies. With any luck, some of these eggs will become members of the next generation of coho salmon that will return to this stream to lay eggs of their own.
                             </p>
 
                             <p>
@@ -342,7 +379,7 @@
 
                 <div class="columnLeft">
 
-                    <p>This lesson follows a specific and consistent pedagogical design for asking questions, using models, generating explanations and creating argumentats based on evidence.</p>
+                    <p>This lesson follows a specific and consistent pedagogical design for asking questions, using models, generating explanations and creating arguments based on evidence.</p>
 
                     <p>The pedagogical design is as follows:</p>
                 </div>
@@ -374,8 +411,8 @@
 
                     <div class="algorithm">
                         <div class="algorithmHeader">The assumptions:</div>
-                        <div class="algorithmLine"> We're only following a single salmon. </div>
-                        <div class="algorithmLine"> Other salmon are similar to this salmon. </div>
+                        <div class="algorithmLine"> This model is based on the coho salmon species and follows a single adult female fish. </div>
+                        <div class="algorithmLine"> Other salmon species have similar behaviors. </div>
 
                     </div>
                 </div>
@@ -385,7 +422,7 @@
 
 
                 <div class="columnLeft">
-                    <p>The discrepant event: Every lesson built around a computational model has a discrepant event. This event is often a suprise, "aha!" or eureka moment, where the model user generates an insight about the question they're asking. <strong>To the right</strong> is an example of the kind of discrepant event a student might experience during this lesson. </p>
+                    <p>The discrepant event: Every lesson built around a computational model has a discrepant event. This event is often a surprise, "aha!" or eureka moment, where the model user generates an insight into the question being asked. <strong>To the right</strong> is an example of the kind of discrepant event a student might experience during this lesson. </p>
 
                 </div>
 
@@ -408,7 +445,7 @@
                 <div class="columnRight" style="width:401px">
                     <div class="algorithm">
                         <div class="algorithmHeader">Explanation:</div>
-                        <div class="algorithmLine">Student Example Explanation: "Salmon lay so many eggs because their eggs face a lot of adversity on the journey to becoming adult coho salmon that return to spawn!" </div>
+                        <div class="algorithmLine">Student Example Explanation: "Salmon lay so many eggs because they face a lot of adversity on the journey to becoming adult coho salmon!" </div>
                         <div class="algorithmLine">Teacher Example Explanation: "Since so many salmon die before reaching spawning adulthood, laying more eggs increases the probability for successful reproduction and a sustaining population of salmon" </div>
                     </div>
 
@@ -418,7 +455,7 @@
 
 
                 <div class="columnLeft">
-                    <p>The argument: An explanation is different from an argument. The explanation attempts to coherently organize current knowledge. The argument attempts to assert <strong>new knowledge</strong> based on evidence. An argument is often prompted by a decision-making question. <strong>To the right</strong> is an argument question that students could respond to using evidence from this simulation.</p>
+                    <p>The argument: An explanation is different from an argument. An explanation can start off as a hypothesis, or a tentative explanation, that relies on observations, data, and causal events to build towards a more confident, consensus-driven conclusion. An argument attempts to assert <b>new knowledge</b> (the claim) based on evidence. An argument is often prompted by a decision-making question that can lack the certainy of being "right" or "wrong". Arguments can usually be challenged from other viewpoints. <strong>To the right</strong> is an argument question that students could respond to using evidence from this simulation.</p>
                 </div>
 
                 <div class="columnRight" style="width:401px">
@@ -434,7 +471,7 @@
 
                 <div class="columnLeft">
                     <p>The argument claim: The argument claim is an assertion that responds to the argument question. <strong>To the right</strong> is an example claim."</p>
-                    <p>The argument evidence: The argument evidence is a reference to data or observations that support the claim. <strong>To the right</strong> is an aexample of evidence that supports the example claim.</p>
+                    <p>The argument evidence: The argument evidence is a reference to data or observations that support the claim. <strong>To the right</strong> is an example of evidence that supports the example claim.</p>
                     <p>The argument reasoning: The argument reasoning is a statement that links the claim and the evidence in a way that attempts to affirm the link between to two. <strong>To the right</strong> is an example of reasoning statement that links the example claim to the example evidence. </p>
                 </div>
 
@@ -443,7 +480,7 @@
                         <div class="algorithmHeader">Claim-Evidence-Reasoning Response:</div>
                         <div class="algorithmLine"> Example claim: "Improving the spawning grounds would make the biggest improvement to salmon population survival." </div>
                         <div class="algorithmLine"> Example evidence: "The data from this model shows that most of the salmon die as eggs/alevin." </div>
-                        <div class="algorithmLine"> Example reasoning: "Since most salmon die as eggs, improving the quality of spawning grounds would bolster the population the most." </div>
+                        <div class="algorithmLine"> Example reasoning: "Since most salmon die as eggs, improving the quality of spawning grounds would grow the salmon population by having more fish grow to the fry stage." </div>
                     </div>
                 </div>
 
@@ -452,15 +489,17 @@
 
 
                 <div class="columnLeft">
-                    <p>The extension: A good computational model will often <i>motive more new questions or ideas</i>. It's important to take advantage of the opportunity to extend the present investigation to new, different and interesting ideas.  The extension invites students to think more creatively, broadly and/or deeply about the system they are exploring, with the goal of motivating future exploration, curiosity, discovery and excitement. Scientific inquiry can be a prfound and exciting open-ended endevour, and the extension is the place to leave students with a sense of wonder about the world. </p>
+                    <p>The extension: While a computational model might help you answer a question, create an explanation or support an argument, a good computational model will often <i>motivate more new questions or ideas</i>. It's important to take advantage of the opportunity to extend the present investigation to new, different and interesting ideas.  The extension invites students to think more creatively, broadly and/or deeply about the system they are exploring, with the goal of motivating future exploration, curiosity, discovery and excitement. Scientific inquiry can be a profound and exciting open-ended endeavor, and extensions allow students to explore their curiosity about the world. </p>
                 </div>
 
 
                 <div class="columnRight" style="width:401px;">
                     <div class="algorithm">
                         <div class="algorithmHeader">Possible Extensions:</div>
-                        <div class="algorithmLine"> The salmon provide nourishment for the watershed, which is a crucial ecosystem service. So few salmon survive precisely because so many other animals depend on eating them. Salmon are actually the drivers of of a very complex ecosystem. </div>
-                        <div class="algorithmLine"> The salmon are a linneage of fish species that have been on the planet earth for over 5 million years. Their spawning behavior is an adaptation that emerged due to selective pressure at the scale of evolutionary time. Yet now, very suddenty, they are under dramatically different selective pressure: humans.</div>
+                        <div class="algorithmLine">Salmon and Coastal Ecosystems </div>
+                        <div class="algorithmLine"> The salmon provide nourishment for a variety of organisms in the coastal watersheds. One reason so few salmon survive to adulthood is because so many other animals depend on eating them as a good source. Salmon are often considered keystone species in their complex watershed ecosystem. </div>
+                        <div class="algorithmLine">Human Impact on Salmon</div>
+                        <div class="algorithmLine"> Salmon are a lineage of fish species that have been on the planet earth for over 5 million years. Their spawning behavior is an adaptation that emerged due to selective pressure at the scale of evolutionary time. In recent history, salmon have faced increasing pressure from human activities.</div>
                     </div>
 
                 </div>
@@ -749,6 +788,19 @@
                     Novaol.startup("inclassGameSingleGen2600", "1");
 
                     novaol.signoff();
+
+                    var headerVideoList = document.querySelectorAll('.header-video'); // returns NodeList
+                    var headerVideoArray = Array.prototype.slice.call(headerVideoList); // converts NodeList to Array
+
+                    headerVideoArray.forEach(function(i, elem) {
+                        headerVideo = new HeaderVideo({
+                            element: elem,
+                            media: '.header-video__media',
+                            playTrigger: '.header-video__play-trigger',
+                            closeTrigger: '.header-video__close-trigger'
+                        });
+                    });
+
                 });
             </script>
 
