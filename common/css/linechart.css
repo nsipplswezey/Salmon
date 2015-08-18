@@ -1,13 +1,12 @@
 .linechart {
   font: 10px sans-serif;
-  background-color: #ffc;
 }
 
 .axis path,
 .axis line {
   fill: none;
   stroke: #000;
-  stroke-width: 1.0px;  
+  stroke-width: 1.0px;
   shape-rendering: crispEdges;
 }
 

@@ -1,7 +1,6 @@
 @CHARSET "UTF-8";
 
 body {
-	background-color: lightcyan;
 	padding-left: 20px;
 	padding-right: 20px;
 }
@@ -11,7 +10,7 @@ body {
 }
 
 .control td {
-	text-align: right; 
+	text-align: right;
 }
 
 .simControlTable {
@@ -30,7 +29,7 @@ body {
 .controlTable {
 	width: 1000px;
 }
- 
+
 .controlTableEbola {
 	width: 400px;
 }
@@ -55,12 +54,12 @@ body {
 }
 
 #visuals {
-	padding: 20px;	
+	padding: 20px;
 }
 
 .vizTable {
-	style="width: 100%; 
-	max-width: 1250px; 
-	min-width: 1250px; 
-	table-layout: fixed;	
+	style="width: 100%;
+	max-width: 1250px;
+	min-width: 1250px;
+	table-layout: fixed;
 }

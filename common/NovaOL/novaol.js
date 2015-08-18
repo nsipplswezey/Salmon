@@ -6,7 +6,7 @@
 /**
  * Generates dom and novamanager for simulations.
  * @param {Object} PDatas - The model specifications. In an extended .json format
- * @param {Number} index - Index tag for this instantiation of the projectn 
+ * @param {Number} index - Index tag for this instantiation of the projectn
  * @returns {Object} Object wrapping PData with methods for parsing PData, and converting into DOM elements;
  * 	other methods create novaManager instance. Some of these methods seem to used by <model_name>.js files
  */
@@ -54,15 +54,15 @@ Novaol = function(PDatas, index) {
 			if (x.indexOf(y[i]) < 0) ans.push(y[i]);
 		return ans;
 	}
-	
+
 	this.data = mergeAll(arguments);
-	this.project = this.data.project; 
+	this.project = this.data.project;
 
 //nmify (tag) provides properly annotated prefix (suffix) to prepend (append) to references
 	this.nmify ="globl['"+this.project+"'].novaManager['"+this.index+"']";
 	this.tag = this.project+"_"+this.index;
 }
-	
+
 Novaol.prototype.git0 = function(x){return (Array.isArray(x)) ? x[0] : x;}
 Novaol.prototype.gitn = function(x){return (Array.isArray(x)) ? x[x.length-1] : x;}
 
@@ -88,7 +88,7 @@ Novaol.prototype.simbuttons = function(){
 	];
 };
 
-//control creates appropriate HTML for each type of control 
+//control creates appropriate HTML for each type of control
 Novaol.prototype.control = function(hook, clazz, dat) {
 	var tag = this.tag;
 	var nmify = this.nmify;
@@ -201,7 +201,7 @@ Novaol.prototype.buttons = function(hook, clazz, dat) {
 
 // populate reads the PData specification and creates appropriate HTML elements
 Novaol.prototype.populate = function(callback){
-	
+
 	//Additional CSS files
 	if ("css" in this.data) {
 		d3.select("head").selectAll(".csslinks").data(this.data.css)
@@ -219,14 +219,15 @@ Novaol.prototype.populate = function(callback){
 	//Document title
 	d3.select("head").append("title").text(this.gitn(this.data.title));
 
-	if ("wallpaper" in this.data) {
-		d3.select("body")
-		.attr("background", "common/images/"+this.gitn(this.data.wallpaper));
-	}
-	else if ("background_color" in this.data) {
-		d3.select("body")
-		.style("background-color", this.gitn(this.data.background_color));
-	}
+  //Background color shouldn't be specified here...
+// 	if ("wallpaper" in this.data) {
+// 		d3.select("body")
+// 		.attr("background", "common/images/"+this.gitn(this.data.wallpaper));
+// 	}
+// 	else if ("background_color" in this.data) {
+// 		d3.select("body")
+// 		.style("background-color", this.gitn(this.data.background_color));
+// 	}
 
 	//Title banner
 	d3.select("#simtitle").text(this.gitn(this.data.title));
@@ -236,12 +237,15 @@ Novaol.prototype.populate = function(callback){
 	var simcontrols = ("simcontrols" in this.data) ? this.data.simcontrols(this.index) : this.simcontrols();
 
 	//Simulator controls
+
+  //Background color should be specified seperately in a css doc.
+  //Not based on json
 	var tagg = "#SControls_"+this.tag;
 	if ("model_background" in this.data && this.index in this.data.model_background) {
-		d3.select("#"+this.tag).style("background-color", this.gitn(this.data.model_background[this.index]));
+		//d3.select("#"+this.tag).style("background-color", this.gitn(this.data.model_background[this.index]));
 	}
 	if ("model_wallpaper" in this.data && this.index in this.data.model_wallpaper) {
-		d3.select("#"+this.tag).style("background", "common/images/"+this.gitn(this.data.model_wallpaper[this.index]));
+		//d3.select("#"+this.tag).style("background", "common/images/"+this.gitn(this.data.model_wallpaper[this.index]));
 	}
 	this.control(d3.select(tagg).append("table").append("tr"), "ncsliders", simcontrols);
 	this.buttons(d3.select(tagg).select("tr").append("td"), "ncbuttons", simbuttons);
@@ -266,7 +270,7 @@ Novaol.prototype.populate = function(callback){
 		} else
 			this.data.visuals(d3.select("#visuals_"+this.tag), this.project, this.index);
 	}
-	
+
 	//Author's signature
 	if ("address" in this.data) {
 		if (!("address" in globl)) globl.address = [];
@@ -277,7 +281,7 @@ Novaol.prototype.populate = function(callback){
 			if (globl.address.indexOf(this.data.address) < 0) globl.address.push(this.data.address);
 		}
 	}
-	
+
 	//Modification date
 	if ("date" in this.data)
 		d3.select("#modified").text("Last Modified "+this.data.date);
@@ -381,10 +385,10 @@ Novaol.getSyncScriptParams = function() {
 	var ans = new Object();
 	for (var i = 0; i < arguments.length; i++) {
 		var val = scriptName.getAttribute(arguments[i]);
-		if (val != null) ans[arguments[i]] = val; 
+		if (val != null) ans[arguments[i]] = val;
 	};
 	return ans;
-} 
+}
 
 //Reads in project name and records JSON file
 Novaol.recordJSON = function(obj) {
@@ -404,7 +408,7 @@ Novaol.recordJS = function(obj) {
 Novaol.prototype.buildHTML = function() {
 	var tag = this.tag;
 	var loc = d3.select("#"+tag);
-// model controls	
+// model controls
 	loc.append("table")
 	.attr("id", "SControls_"+tag)
 	.attr("class", "simControlTable");
@@ -414,7 +418,7 @@ Novaol.prototype.buildHTML = function() {
 	.attr("id", "MControls_"+tag)
 	.attr("class", "modControlTable");
 	loc.append("hr");
-// visuals	
+// visuals
 	loc.append("div")
 	.attr("id", "visuals_"+tag)
 	.attr("class", "novaVisuals");
@@ -430,7 +434,7 @@ Novaol.startup = function(project, index) {
 	globl[project].controls[index] = novaol.control_builder();
 	globl[project].postInterval = novaol.get("postinterval");
 	globl[project].novaManager[index] = novaol.getNovaManager()
-} 
+}
 
 // getNovaManager builds a simulation instance and attaches a novaManager
 Novaol.prototype.getNovaManager = function() {
