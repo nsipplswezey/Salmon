@@ -279,9 +279,9 @@
     .video-caption--head .video-headline {
         position: absolute;
         top: 10%;
-        color: #000;
+        /*color: #000;*/
         left: 7%;
-        border-bottom: solid 2px black;
+        border-bottom: solid 2px white;
         text-shadow: none;
         font-size: 50px;
         line-height: 55px;
@@ -485,16 +485,16 @@
     </div>
     <div class="navigation-right">
         <a href="#" class="navigation-volume"><div class="navigation-icon"></div></a>
-        <div class="navigation-sections">
-            <a href="#1" class="navigation-section" title="The Salmon Game">1</a>
-            <a href="#2" class="navigation-section" title="How To Run The Lesson">2</a>
-            <a href="#3" class="navigation-section" title="A Single Mother Coho">3</a>
-            <a href="#4" class="navigation-section" title="A Computational Simulation">4</a>
-            <a href="#5" class="navigation-section" title="Discrepant Events, Explanations and Arguments">5</a>
-            <a href="#6" class="navigation-section" title="Background Information">6</a>
-            <a href="#7" class="navigation-section" title="Supporting Material">7</a>
-            <a href="#8" class="navigation-section" title="Share This Lesson">8</a>
-        </div>
+        <!--         <div class="navigation-sections">
+<a href="#1" class="navigation-section" title="The Salmon Game">1</a>
+<a href="#2" class="navigation-section" title="Standards Covered">2</a>
+<a href="#2" class="navigation-section" title="How To Run The Lesson">3</a>
+<a href="#3" class="navigation-section" title="A Single Mother Coho">4</a>
+<a href="#4" class="navigation-section" title="A Computational Simulation">5</a>
+<a href="#5" class="navigation-section" title="Discrepant Events, Explanations and Arguments">6</a>
+<a href="#6" class="navigation-section" title="Background Information">7</a>
+<a href="#8" class="navigation-section" title="Share This Lesson">8</a>
+</div> -->
         <div class="navigation-shares">
             <a href="#" class="navigation-share navigation-share--facebook"><div class="navigation-icon"></div></a>
             <a href="#" class="navigation-share navigation-share--twitter"><div class="navigation-icon"></div></a>
@@ -529,7 +529,7 @@
         function scrolled() {
             //this +80 is a short term hack.
             //Attend to this when we get to react.
-            var j = Math.max(0, Math.min(markerOffsets.length - 1, d3.bisectLeft(markerOffsets, pageYOffset + 80) - 1));
+            var j = Math.max(0, Math.min(markerOffsets.length - 1, d3.bisectLeft(markerOffsets, pageYOffset) - 1));
             anchor.classed("navigation-section--active", function(d, i) { return i === j; });
         }
 
@@ -538,7 +538,7 @@
             d3.transition().duration(750).tween("scroll", function() {
                 //this +80 is a short term hack.
                 //Attend to this when we get to react.
-                var offset = d3.interpolateNumber(pageYOffset, (markerOffsets[i] + 80));
+                var offset = d3.interpolateNumber(pageYOffset, (markerOffsets[i]));
                 return function(t) { scrollTo(0, offset(t)); };
             });
         }
@@ -546,7 +546,6 @@
     });
 
 </script>
-
 
 <div class="main">
     <div class="article">
@@ -566,12 +565,6 @@
                     </div>
                 </div>
             </div>
-            <div class="video" data-video="Stronghold" data-animation>
-                <div class="video-container">
-                    <div class="video-source">Satellite imagery: NASA</div>
-                </div>
-                <div class="video-caption">There are hundreds of creeks, streams, and rivers that collectively make up the North Pacific Coast of the United States. But the Smith River Watershed is different.</div>
-            </div>
             <div class="video">
                 <div class="video-container">
                     <img src="./SalmonAssets/salmon-eggs.jpg">
@@ -588,431 +581,446 @@
 
         <div class="intro">
             <div class="columnLeft">
-                <p>The salmon model creates an engagement activity followed by explanation and exploration activities in the 5E pedagogical model.  These lessons complement investigations in the NGSS performance expectations for ecosystems, human impacts and evolution.  The primary focus of the unit is on the probability of sustaining populations through successful reproduction.  The unit also provides connections to several of the science practices:  engaging argument from evidence, constructing explanations, using mathematics and computational thinking, and analyzing and interpreting data.</p>
-            </div>
-            <div class="columnRight" style="width:401px;">
-
-            </div>
-            <div class="endOfColumns"></div>
-
-
-            <div class="columnLeft">
-                <p>This lesson covers the 7th grade standards <strong>to the right.</strong></p>
-
-            </div>
-            <div class="columnRight" style="width:401px;">
-
-                <div class="algorithm">
-                    <div class="algorithmHeader">Science Practice:</div>
-                    <div class="algorithmLine">Engaging In Argument From Evidence </div>
-                </div>
-
-                <div class="algorithm">
-                    <div class="algorithmHeader">Performance Expectation:</div>
-                    <div class="algorithmLine">MS-LS2-4. Construct an argument supported by empirical evidence that changes to physical or biological components of an ecosystem affect populations. </div>
-                </div>
-
-                <div class="algorithm">
-                    <div class="algorithmHeader">Disciplinary Core Idea:</div>
-                    <div class="algorithmLine">LS2.C: Ecosystem Dynamics, Functioning and Resilience </div>
-                    <div class="algorithmLine">Ecosystems are dynamic in anture; their characteristics can vary over time. Disruptions to any physical or biological component of an ecosystem can lead to shifts in all its populations. (MS-LS2-4) </div>
-                </div>
-
-                <div class="algorithm">
-                    <div class="algorithmHeader">Cross-Cutting Concept:</div>
-                    <div class="algorithmLine">Stability and Change </div>
-                    <div class="algorithmLine">Small changes in one part of a system might cause large changes in another part. (MS-LS2-4) </div>
-                </div>
-
-            </div>
-            <div class="endOfColumns"></div>
-
-
-
-            <div class="columnLeft">
-                <p>This lesson covers the 6th grade standards <strong>to the right.</strong></p>
-
-            </div>
-            <div class="columnRight" style="width:401px;">
-
-                <div class="algorithm">
-                    <div class="algorithmHeader">Science Practice:</div>
-                    <div class="algorithmLine">Engaging In Argument From Evidence </div>
-                </div>
-
-                <div class="algorithm">
-                    <div class="algorithmHeader">Performance Expectation:</div>
-                    <div class="algorithmLine">MS-LS1-4. Use argument based on empirical evidence and scientific reasoning to support an explanation for how characteristics anmial behaviors and specialized plant structures affect the probability of successful reproduction of animals and plants respectively. </div>
-                </div>
-
-                <div class="algorithm">
-                    <div class="algorithmHeader">Disciplinary Core Idea:</div>
-                    <div class="algorithmLine">LS1.B: Growth and Development of Organisms </div>
-                    <div class="algorithmLine">Animals engage in characteristic behaviors that increase the odds of reporudction. (MS-LS1-4) </div>
-                </div>
-
-                <div class="algorithm">
-                    <div class="algorithmHeader">Cross-Cutting Concept:</div>
-                    <div class="algorithmLine">Cause and Effect </div>
-                    <div class="algorithmLine">Phenomena may have more than one cause, and some cause and effect relations in systems can only be described using probability. (MS-LS1-4) </div>
-                </div>
-
-            </div>
-            <div class="endOfColumns"></div>
-        </div>
-
-        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-        <!-- How-To: -->
-        <a class="navigation-marker" id="2"></a>
-        <div class="chapter">
-
-            <div class="chapterHeader"><span>How To Run The Lesson</span></div>
-
-            <div class="columnLeft">
-                <p>Go through the salmon game scenario as a teacher-guided activity with the whole class.  <strong>Click on the image to the right </strong> for the game slide show and student data sheets.</p>
-                <p>Repeat the salmon game scenario with changing values using the “Single Mother Coho” narrative.  See graph below for real-time updates.</p>
-                <p>Go to “Discrepant events, Explanations and Arguments” section for links to follow-up activities and student handouts. (Links to Explanation and Argumentation Student Handouts.)</p>
-
+                <p>The Salmon Game is an engagement activity followed by explanation and exploration activities using a simple browser-embedded computational model. It is designed using the 5E pedagogical model.  </p>
+                <p>This lesson complements investigations in the NGSS performance expectations for ecosystems, human impacts and evolution. The primary focus of the lesson is the rate of successful reproduction in salmon populations.  <strong>Click on the image to the right</strong> for complete lesson plan and materials. </p>
+                <p>The unit also provides connections to several of the science practices:  engaging argument from evidence, constructing explanations, using mathematics and computational thinking, and analyzing and interpreting data. </p>
             </div>
             <div class="columnRight" style="width:401px;">
                 <div>
-                    <a class="imageLink" href="https://drive.google.com/folderview?id=0B61JMX9lcwC1fmJZWXJ1RVdldzZiZEQwSzVidkpkeTZvYjA5ajJyLXhlbUozREVBQzRFbTQ&usp=sharing"><img class="placeHolder" src="Images/SlideShow.png" alt="" width="400" height="190"></a>
+                    <a class="imageLink" href="https://drive.google.com/folderview?id=0B61JMX9lcwC1fmJZWXJ1RVdldzZiZEQwSzVidkpkeTZvYjA5ajJyLXhlbUozREVBQzRFbTQ&usp=sharing"><img class="placeHolder" src="Images/LessonPlan.png" alt="" width="400" height="190"></a>
                 </div>
-
 
             </div>
             <div class="endOfColumns"></div>
-        </div>
 
 
-
-        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-        <!-- The Salmon Game -->
-        <!-- img class="novaIcon" src="Images/Icons/32x32.png" alt="" width="40" height="39" -->
-        <a class="navigation-marker" id="3"></a>
-        <div class="tangle" data-model="game">
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <!-- Standards Covered: -->
+            <a class="navigation-marker" id="2"></a>
             <div class="chapter">
-                <div class="chapterHeader"><span>A Single Mother Coho</span></div>
+
+                <div class="chapterHeader"><span>Standards Covered</span></div>
 
                 <div class="columnLeft">
-
-                    <p> Below is an interactive narrative that matches the game that students play in class. Change any of the numbers below by <strong>clicking and dragging left or right</strong> and the narrative will update the whole progression of the coho life cycle. Read the story –don't skim– it's not long, it goes fast, and it's supported by data. Play with the numbers and see what intuition you generate. This story outlines the foundation modeling excercise for the class. <strong>Take a look at the narrative below</strong>.</p>
-
-                    <i>
-                        <p> "In mid-November, a single female coho salmon lays <b>2600 eggs</b> near the headwaters of the Middle Fork of the Smith River, and then she dies. With any luck, some of these eggs will become members of the next generation of coho salmon that will return to this stream to lay eggs of their own.
-                        </p>
-
-                        <p>
-                            <b>Place your <span data-var="eggLaying" data-format="%.0f eggs"></span> at the head waters, in the egg section. </b>
-                        </p>
-
-                        <p>It turns out that about <span data-var="fertilization" class="TKAdjustableNumber" data-min="700" data-max="900" data-step="1" data-format="%.0f of these eggs"></span> are never fertalized by male coho.
-                            Then <span data-var="fungusKillsEggs" class="TKAdjustableNumber" data-min="100" data-max="300" data-step="1" data-format="%.0f fertilized eggs"></span> become diseased with a common stream fungus.
-                            If that weren't enough, birds eat <span data-var="birdsEatEggs" class="TKAdjustableNumber" data-min="100" data-max="300" data-step="1" data-format="%.0f fertilized eggs"></span>.
-                            Then a heavy winter rainstorm hits the watershed, causing flooding and muddy stream conditions that wash <span data-var="rainAndMud" class="TKAdjustableNumber" data-min="350" data-max="450" data-step="1" data-format="%.0f eggs"></span> downstream where they're covered in tick mud, and they never have a chance to hatch.
-                        </p>
-
-                        <p>Approximately 40 days after the eggs were fertalized, they begin to hatch. From the eggs emerge small fish called <i>alevin</i>. They have small yolk sacs attached to their bodies, which they'll feed on for several weeks. Alevin stay very close to the bottom of the stream or under the gravel. <b>From the inital <span data-var="eggLaying" data-format="%.0f eggs"></span> only <span data-var="alevin" data-format="%.0f eggs"></span> survived to alevin stage</b>.
-                        </p>
-
-                        <p> Not all alevin emerge successfully and <span data-var="eggHatching" class="TKAdjustableNumber" data-min="250" data-max="350" data-step="1" data-format="%.0f alevin"></span> have deformed fins or other mutations that prevent them from surviving.
-                            Herons, ducks and kingfishers find alevin at the bottom of the stream and eat <span data-var="birdsEatAlevin" class="TKAdjustableNumber" data-min="250" data-max="350" data-step="1" data-format="%.0f alevin"></span>.
-                        </p>
-
-                        <p>Six months have passed since the eggs were first laid. The alevin have absorbed all of the yolk sac and are now called fry. <b>From the surving <span data-var="alevin" data-format="%.0f alevin"></span> only <span data-var="fry" data-format="%.0f alevin"></span> survived to fry stage.</b>
-                        </p>
-                        <p><b>Move your <span data-var="fry" data-format="%.0f new fry"></span> to the fry habitat.</b></p>
-                    </i>
-
+                    <p>This lesson covers the 7th grade standards <strong>to the right.</strong></p>
 
                 </div>
-                <div class="columnRight">
-                    <i>
-                        <p> Fry swim faster without their yolk sacs, and they move away from the bottom of the stream and out to the edges of the stream, where herons, frogs and other fish eat <span data-var="heronsFrogsAndOtherFish" class="TKAdjustableNumber" data-min="180" data-max="200" data-step="1" data-format="%.0f fry"></span>.
-                            It is now the middle of the summer. The water temperatures are increasing as the stream level drops and <span data-var="summerWaterLevelDrop" class="TKAdjustableNumber" data-min="160" data-max="180" data-step="1" data-format="%.0f fry"></span> are cought in shallow pools and do not survive the higher temperatures.
-                        </p>
+                <div class="columnRight" style="width:401px;">
 
-                        <p> It's been a little less than a year since the surviving alevin became fry. The surviving fry are now a few inches long. They move downstream and take on a shiny, silver color. As they feed on insects, they reach 6 inches in length. They are now called smolts. The smolts are the first life stage that leaves freshwater and migrates out to the sea. They continue moving down the the river to the estuary. <b>From the surviving <span data-var="fry" data-format="%.0f fry"></span> only <span data-var="smolts" data-format="%.0f fry"></span> survived to smolt stage.</b>
-                        </p>
+                    <div class="algorithm">
+                        <div class="algorithmHeader">Science Practice:</div>
+                        <div class="algorithmLine">Engaging In Argument From Evidence </div>
+                    </div>
 
-                        <p>
-                            <b>Move your <span data-var="smolts" data-format="%.0f smolts"></span> to the smolt habitat.</b>
-                        </p>
+                    <div class="algorithm">
+                        <div class="algorithmHeader">Performance Expectation:</div>
+                        <div class="algorithmLine">MS-LS2-4. Construct an argument supported by empirical evidence that changes to physical or biological components of an ecosystem affect populations. </div>
+                    </div>
 
-                        <p> <span data-var="fishKillerWhalesSeaLionsBirds" class="TKAdjustableNumber" data-min="20" data-max="30" data-step="1" data-format="%.0f smolts"></span> are eaten by other fish, killer whales, sea lions and birds.
-                            <b>From your surviving <span data-var="smolts" data-format="%.0f smolts"></span> only <span data-var="adults" data-format="%.0f smolts"></span> survived to the adult stage.</b>
-                        </p>
+                    <div class="algorithm">
+                        <div class="algorithmHeader">Disciplinary Core Idea:</div>
+                        <div class="algorithmLine">LS2.C: Ecosystem Dynamics, Functioning and Resilience </div>
+                        <div class="algorithmLine">Ecosystems are dynamic in anture; their characteristics can vary over time. Disruptions to any physical or biological component of an ecosystem can lead to shifts in all its populations. (MS-LS2-4) </div>
+                    </div>
 
-                        <p>Smolts move to the open ocean and grow to adult size. They join schools of coho from other rivers. They spend 1 to 3 years feeding in the ocean and grow to about 2 feet long and about 35 pounds.
-
-                        </p>
-                        <p>
-                            <b>Move your <span data-var="adults" data-format="%.0f adults"></span> to the ocean habitat</b>
-                        </p>
-
-                        <p> A salmon fishing boat hooks several fish from a school of coho in the ocean. It turns out <span data-var="salmonFishingBoat" class="TKAdjustableNumber" data-min="1" data-max="3" data-step="1" data-format="%.0f those adult coho"></span> were from the spawn of your mother coho.
-                            Later on a pod of killer whales attacks another school of coho, and <span data-var="killerWhale" class="TKAdjustableNumber" data-min="1" data-max="3" data-step="1" data-format="%.0f of those adult coho"></span> were from the spawn of your mother coho.
-                        </p>
-
-                        <p> <b>Of the <span data-var="adults" data-format="%.0f adults"></span> that made it to the ocean, only <span data-var="spawningAdults" data-format="%.0f adults"></span> survived to become spawning adults. </b>
-                        </p>
-
-
-                        <p>
-                            After 2 years in the ocean, those <span data-var="spawningAdults" data-format="%.0f spawning adults"></span> return to their native stream, and head back to their spawning grounds to lay their eggs. All coho salmon die after they spawn.
-                            The cycle begins again with a new batch of eggs."
-                        </p>
-                    </i>
+                    <div class="algorithm">
+                        <div class="algorithmHeader">Cross-Cutting Concept:</div>
+                        <div class="algorithmLine">Stability and Change </div>
+                        <div class="algorithmLine">Small changes in one part of a system might cause large changes in another part. (MS-LS2-4) </div>
+                    </div>
 
                 </div>
                 <div class="endOfColumns"></div>
-            </div> <!-- End of chapter -->
-        </div> <!-- End of tangle -->
-
-
-        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-        <!-- Model Content: In-class game -->
-        <a class="navigation-marker" id="4"></a>
-        <div class="chapter">
-            <div class="chapterHeader"><span>A computational simulation</span></div>
-
-
-            <div class="columnLeft">
-                <p>Below is a computational simulation that matches the above simulation using the initial values. Click <strong>run</strong> to run the simlation.</p>
-            </div>
-            <div class="columnRight">
-
-            </div>
-            <div class="endOfColumns"></div>
 
 
 
-            <div id="inclassGameSingleGen2600_1"></div>
-
-
-            <div class="columnLeft">
-            </div>
-
-            <div class="columnRight">
-            </div>
-
-            <div class="endOfColumns"></div>
-        </div>
-
-
-
-        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-        <!-- How-To: Discrepant Event and CER -->
-        <a class="navigation-marker" id="5"></a>
-        <div class="chapter">
-            <div class="chapterHeader"><span>Discrepant Events, Explanations and Arguments</span></div>
-
-            <div class="columnLeft">
-
-                <p>This lesson follows a specific and consistent pedagogical design for asking questions, using models, generating explanations and creating arguments based on evidence.</p>
-
-                <p>The pedagogical design is as follows:</p>
-            </div>
-            <div class="endOfColumns"></div>
-
-            <div class="columnLeft">
-
-                <p>The question: Every computational model is designed to answer a single specific question. If you're question changes, then your model must also change. <strong>To the right</strong> is the specific question that this model attempts to answer.</p>
-
-            </div>
-
-            <div class="columnRight" style="width:401px">
-
-                <div class="algorithm">
-                    <div class="algorithmHeader">The question:</div>
-                    <div class="algorithmLine"> Why do salmon lay so many eggs? </div>
-                </div>
-            </div>
-            <div class="endOfColumns"></div>
-
-
-
-            <div class="columnLeft">
-
-                <p>The assumptions: Every computational model is build upon specific assumptions that simplify the complexity of the real world so that we can answer our specific question. <strong>To the right</strong> are some of the assumptions implicit in our model.</p>
-            </div>
-
-            <div class="columnRight" style="width:401px">
-
-                <div class="algorithm">
-                    <div class="algorithmHeader">The assumptions:</div>
-                    <div class="algorithmLine"> This model is based on the coho salmon species and follows a single adult female fish. </div>
-                    <div class="algorithmLine"> Other salmon species have similar behaviors. </div>
+                <div class="columnLeft">
+                    <p>This lesson covers the 6th grade standards <strong>to the right.</strong></p>
 
                 </div>
-            </div>
-            <div class="endOfColumns"></div>
+                <div class="columnRight" style="width:401px;">
 
+                    <div class="algorithm">
+                        <div class="algorithmHeader">Science Practice:</div>
+                        <div class="algorithmLine">Engaging In Argument From Evidence </div>
+                    </div>
 
+                    <div class="algorithm">
+                        <div class="algorithmHeader">Performance Expectation:</div>
+                        <div class="algorithmLine">MS-LS1-4. Use argument based on empirical evidence and scientific reasoning to support an explanation for how characteristics animal behaviors and specialized plant structures affect the probability of successful reproduction of animals and plants respectively. </div>
+                    </div>
 
+                    <div class="algorithm">
+                        <div class="algorithmHeader">Disciplinary Core Idea:</div>
+                        <div class="algorithmLine">LS1.B: Growth and Development of Organisms </div>
+                        <div class="algorithmLine">Animals engage in characteristic behaviors that increase the odds of reporudction. (MS-LS1-4) </div>
+                    </div>
 
-            <div class="columnLeft">
-                <p>The discrepant event: Every lesson built around a computational model has a discrepant event. This event is often a surprise, "aha!" or eureka moment, where the model user generates an insight into the question being asked. <strong>To the right</strong> is an example of the kind of discrepant event a student might experience during this lesson. </p>
+                    <div class="algorithm">
+                        <div class="algorithmHeader">Cross-Cutting Concept:</div>
+                        <div class="algorithmLine">Cause and Effect </div>
+                        <div class="algorithmLine">Phenomena may have more than one cause, and some cause and effect relations in systems can only be described using probability. (MS-LS1-4) </div>
+                    </div>
 
-            </div>
-
-            <div class="columnRight" style="width:401px">
-
-                <div class="algorithm">
-                    <div class="algorithmHeader">Discrepant event:</div>
-                    <div class="algorithmLine"> Wow! All the eggs died! </div>
                 </div>
-            </div>
-            <div class="endOfColumns"></div>
-
-
-
-
-            <div class="columnLeft">
-                <p>The explanation: Models are often used to help us explain <i>why</i> something happens in a way that matches our observations. In this case a students explanation attempts to answer "Why do salmon lay so many eggs?" <strong>To the right</strong> are a couple example explanations, both that a student might provide and that a teacher might provide.</p>
+                <div class="endOfColumns"></div>
             </div>
 
-            <div class="columnRight" style="width:401px">
-                <div class="algorithm">
-                    <div class="algorithmHeader">Explanation:</div>
-                    <div class="algorithmLine">Student Example Explanation: "Salmon lay so many eggs because they face a lot of adversity on the journey to becoming adult coho salmon!" </div>
-                    <div class="algorithmLine">Teacher Example Explanation: "Since so many salmon die before reaching spawning adulthood, laying more eggs increases the probability for successful reproduction and a sustaining population of salmon" </div>
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <!-- How-To: -->
+            <a class="navigation-marker" id="3"></a>
+            <div class="chapter">
+
+                <div class="chapterHeader"><span>How To Run The Lesson</span></div>
+
+                <div class="columnLeft">
+                    <p>Go through the salmon game scenario as a teacher-guided activity with the whole class.  <strong>Click on the image to the right </strong> for the game slide show and student data sheets.</p>
+                    <p>Repeat the salmon game scenario with changing values using the “Mother Coho” narrative.  <strong>See narrative below</strong> and <strong>drag left and right on the numbers</strong> to see how changing the narrative affects the outcomes of these 2600 eggs.</p>
+                    <p>Go to <a href=#6> Discrepant events, Explanations and Arguments</a> section for links to follow-up activities and student handouts.</p>
+
+                </div>
+                <div class="columnRight" style="width:401px;">
+
+                    <div>
+                        <a class="imageLink" href="https://drive.google.com/folderview?id=0B61JMX9lcwC1fmJZWXJ1RVdldzZiZEQwSzVidkpkeTZvYjA5ajJyLXhlbUozREVBQzRFbTQ&usp=sharing"><img class="placeHolder" src="Images/GameDocuments.png" alt="" width="400" height="190"></a>
+                    </div>
+
+
+
+                </div>
+                <div class="endOfColumns"></div>
+            </div>
+
+
+
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <!-- The Salmon Game -->
+            <!-- img class="novaIcon" src="Images/Icons/32x32.png" alt="" width="40" height="39" -->
+            <a class="navigation-marker" id="4"></a>
+            <div class="tangle" data-model="game">
+                <div class="chapter">
+                    <div class="chapterHeader"><span>A Single Mother Coho</span></div>
+
+                    <div class="columnLeft">
+
+                        <p> Below is an interactive narrative that matches the game that students play in class. Change any of the numbers below by <strong>clicking and dragging left or right</strong> and the narrative will update the whole progression of the coho life cycle. Read the story –don't skim– it's not long, it goes fast, and it's supported by data. Play with the numbers and see what intuition you generate. This story outlines the foundation modeling excercise for the class. <strong>Take a look at the narrative below</strong>.</p>
+
+                        <i>
+                            <p> "In mid-November, a single female coho salmon lays <b>2600 eggs</b> near the headwaters of the Middle Fork of the Smith River, and then she dies. With any luck, some of these eggs will become members of the next generation of coho salmon that will return to this stream to lay eggs of their own.
+                            </p>
+
+                            <p>
+                                <b>Place your <span data-var="eggLaying" data-format="%.0f eggs"></span> at the head waters, in the egg section. </b>
+                            </p>
+
+                            <p>It turns out that about <span data-var="fertilization" class="TKAdjustableNumber" data-min="700" data-max="900" data-step="1" data-format="%.0f of these eggs"></span> are never fertalized by male coho.
+                                Then <span data-var="fungusKillsEggs" class="TKAdjustableNumber" data-min="100" data-max="300" data-step="1" data-format="%.0f fertilized eggs"></span> become diseased with a common stream fungus.
+                                If that weren't enough, birds eat <span data-var="birdsEatEggs" class="TKAdjustableNumber" data-min="100" data-max="300" data-step="1" data-format="%.0f fertilized eggs"></span>.
+                                Then a heavy winter rainstorm hits the watershed, causing flooding and muddy stream conditions that wash <span data-var="rainAndMud" class="TKAdjustableNumber" data-min="350" data-max="450" data-step="1" data-format="%.0f eggs"></span> downstream where they're covered in tick mud, and they never have a chance to hatch.
+                            </p>
+
+                            <p>Approximately 40 days after the eggs were fertalized, they begin to hatch. From the eggs emerge small fish called <i>alevin</i>. They have small yolk sacs attached to their bodies, which they'll feed on for several weeks. Alevin stay very close to the bottom of the stream or under the gravel. <b>From the inital <span data-var="eggLaying" data-format="%.0f eggs"></span> only <span data-var="alevin" data-format="%.0f eggs"></span> survived to alevin stage</b>.
+                            </p>
+
+                            <p> Not all alevin emerge successfully and <span data-var="eggHatching" class="TKAdjustableNumber" data-min="250" data-max="350" data-step="1" data-format="%.0f alevin"></span> have deformed fins or other mutations that prevent them from surviving.
+                                Herons, ducks and kingfishers find alevin at the bottom of the stream and eat <span data-var="birdsEatAlevin" class="TKAdjustableNumber" data-min="250" data-max="350" data-step="1" data-format="%.0f alevin"></span>.
+                            </p>
+
+                            <p>Six months have passed since the eggs were first laid. The alevin have absorbed all of the yolk sac and are now called fry. <b>From the surving <span data-var="alevin" data-format="%.0f alevin"></span> only <span data-var="fry" data-format="%.0f alevin"></span> survived to fry stage.</b>
+                            </p>
+                            <p><b>Move your <span data-var="fry" data-format="%.0f new fry"></span> to the fry habitat.</b></p>
+                        </i>
+
+
+                    </div>
+                    <div class="columnRight">
+                        <i>
+                            <p> Fry swim faster without their yolk sacs, and they move away from the bottom of the stream and out to the edges of the stream, where herons, frogs and other fish eat <span data-var="heronsFrogsAndOtherFish" class="TKAdjustableNumber" data-min="180" data-max="200" data-step="1" data-format="%.0f fry"></span>.
+                                It is now the middle of the summer. The water temperatures are increasing as the stream level drops and <span data-var="summerWaterLevelDrop" class="TKAdjustableNumber" data-min="160" data-max="180" data-step="1" data-format="%.0f fry"></span> are cought in shallow pools and do not survive the higher temperatures.
+                            </p>
+
+                            <p> It's been a little less than a year since the surviving alevin became fry. The surviving fry are now a few inches long. They move downstream and take on a shiny, silver color. As they feed on insects, they reach 6 inches in length. They are now called smolts. The smolts are the first life stage that leaves freshwater and migrates out to the sea. They continue moving down the the river to the estuary. <b>From the surviving <span data-var="fry" data-format="%.0f fry"></span> only <span data-var="smolts" data-format="%.0f fry"></span> survived to smolt stage.</b>
+                            </p>
+
+                            <p>
+                                <b>Move your <span data-var="smolts" data-format="%.0f smolts"></span> to the smolt habitat.</b>
+                            </p>
+
+                            <p> <span data-var="fishKillerWhalesSeaLionsBirds" class="TKAdjustableNumber" data-min="20" data-max="30" data-step="1" data-format="%.0f smolts"></span> are eaten by other fish, killer whales, sea lions and birds.
+                                <b>From your surviving <span data-var="smolts" data-format="%.0f smolts"></span> only <span data-var="adults" data-format="%.0f smolts"></span> survived to the adult stage.</b>
+                            </p>
+
+                            <p>Smolts move to the open ocean and grow to adult size. They join schools of coho from other rivers. They spend 1 to 3 years feeding in the ocean and grow to about 2 feet long and about 35 pounds.
+
+                            </p>
+                            <p>
+                                <b>Move your <span data-var="adults" data-format="%.0f adults"></span> to the ocean habitat</b>
+                            </p>
+
+                            <p> A salmon fishing boat hooks several fish from a school of coho in the ocean. It turns out <span data-var="salmonFishingBoat" class="TKAdjustableNumber" data-min="1" data-max="3" data-step="1" data-format="%.0f those adult coho"></span> were from the spawn of your mother coho.
+                                Later on a pod of killer whales attacks another school of coho, and <span data-var="killerWhale" class="TKAdjustableNumber" data-min="1" data-max="3" data-step="1" data-format="%.0f of those adult coho"></span> were from the spawn of your mother coho.
+                            </p>
+
+                            <p> <b>Of the <span data-var="adults" data-format="%.0f adults"></span> that made it to the ocean, only <span data-var="spawningAdults" data-format="%.0f adults"></span> survived to become spawning adults. </b>
+                            </p>
+
+
+                            <p>
+                                After 2 years in the ocean, those <span data-var="spawningAdults" data-format="%.0f spawning adults"></span> return to their native stream, and head back to their spawning grounds to lay their eggs. All coho salmon die after they spawn.
+                                The cycle begins again with a new batch of eggs."
+                            </p>
+                        </i>
+
+                    </div>
+                    <div class="endOfColumns"></div>
+                </div> <!-- End of chapter -->
+            </div> <!-- End of tangle -->
+
+
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <!-- Model Content: In-class game -->
+            <a class="navigation-marker" id="5"></a>
+            <div class="chapter">
+                <div class="chapterHeader"><span>A computational simulation</span></div>
+
+
+                <div class="columnLeft">
+                    <p>Below is a computational simulation that matches the above simulation using the initial values. Click <strong>run</strong> to run the simlation.</p>
+                </div>
+                <div class="columnRight">
+
+                </div>
+                <div class="endOfColumns"></div>
+
+
+
+                <div id="inclassGameSingleGen2600_1"></div>
+
+
+                <div class="columnLeft">
                 </div>
 
-            </div>
-            <div class="endOfColumns"></div>
-
-
-
-            <div class="columnLeft">
-                <p>The argument: An explanation is different from an argument. An explanation can start off as a hypothesis, or a tentative explanation, that relies on observations, data, and causal events to build towards a more confident, consensus-driven conclusion. An argument attempts to assert <b>new knowledge</b> (the claim) based on evidence. An argument is often prompted by a decision-making question that can lack the certainy of being "right" or "wrong". Arguments can usually be challenged from other viewpoints. <strong>To the right</strong> is an argument question that students could respond to using evidence from this simulation.</p>
-            </div>
-
-            <div class="columnRight" style="width:401px">
-
-                <div class="algorithm">
-                    <div class="algorithmHeader">Argument Question:</div>
-                    <div class="algorithmLine">"Where in the salmon life cycle would you intervene to have the biggest impact on salmon populations?" </div>
+                <div class="columnRight">
                 </div>
 
-            </div>
-            <div class="endOfColumns"></div>
-
-
-            <div class="columnLeft">
-                <p>The argument claim: The argument claim is an assertion that responds to the argument question. <strong>To the right</strong> is an example claim."</p>
-                <p>The argument evidence: The argument evidence is a reference to data or observations that support the claim. <strong>To the right</strong> is an example of evidence that supports the example claim.</p>
-                <p>The argument reasoning: The argument reasoning is a statement that links the claim and the evidence in a way that attempts to affirm the link between to two. <strong>To the right</strong> is an example of reasoning statement that links the example claim to the example evidence. </p>
-            </div>
-
-            <div class="columnRight" stype="width:401px">
-                <div class="algorithm">
-                    <div class="algorithmHeader">Claim-Evidence-Reasoning Response:</div>
-                    <div class="algorithmLine"> Example claim: "Improving the spawning grounds would make the biggest improvement to salmon population survival." </div>
-                    <div class="algorithmLine"> Example evidence: "The data from this model shows that most of the salmon die as eggs/alevin." </div>
-                    <div class="algorithmLine"> Example reasoning: "Since most salmon die as eggs, improving the quality of spawning grounds would grow the salmon population by having more fish grow to the fry stage." </div>
-                </div>
-            </div>
-
-            <div class="endOfColumns"></div>
-
-
-
-            <div class="columnLeft">
-                <p>The extension: While a computational model might help you answer a question, create an explanation or support an argument, a good computational model will often <i>motivate more new questions or ideas</i>. It's important to take advantage of the opportunity to extend the present investigation to new, different and interesting ideas.  The extension invites students to think more creatively, broadly and/or deeply about the system they are exploring, with the goal of motivating future exploration, curiosity, discovery and excitement. Scientific inquiry can be a profound and exciting open-ended endeavor, and extensions allow students to explore their curiosity about the world. </p>
+                <div class="endOfColumns"></div>
             </div>
 
 
-            <div class="columnRight" style="width:401px;">
-                <div class="algorithm">
-                    <div class="algorithmHeader">Possible Extensions:</div>
-                    <div class="algorithmLine">Salmon and Coastal Ecosystems </div>
-                    <div class="algorithmLine"> The salmon provide nourishment for a variety of organisms in the coastal watersheds. One reason so few salmon survive to adulthood is because so many other animals depend on eating them as a good source. Salmon are often considered keystone species in their complex watershed ecosystem. </div>
-                    <div class="algorithmLine">Human Impact on Salmon</div>
-                    <div class="algorithmLine"> Salmon are a lineage of fish species that have been on the planet earth for over 5 million years. Their spawning behavior is an adaptation that emerged due to selective pressure at the scale of evolutionary time. In recent history, salmon have faced increasing pressure from human activities.</div>
+
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <!-- How-To: Discrepant Event and CER -->
+            <a class="navigation-marker" id="6"></a>
+            <div class="chapter">
+                <div class="chapterHeader"><span>Discrepant Events, Explanations and Arguments</span></div>
+
+                <div class="columnLeft">
+
+                    <p>This lesson follows a specific and consistent pedagogical design for asking questions, using models, generating explanations and creating arguments based on evidence. <strong>Click to the right</strong> for explanation and argumentation templates.</p>
+
+
                 </div>
 
+                <div class="columnRight">
+
+
+                    <div>
+                        <a class="imageLink" href="https://drive.google.com/folderview?id=0B61JMX9lcwC1flBGODJCQVhDSllyeWNjeEJiTVdlZVVvQVFsZU1jVG1lU2x4Q3lXQUFVbG8&usp=sharing&tid=0B61JMX9lcwC1fmJZWXJ1RVdldzZiZEQwSzVidkpkeTZvYjA5ajJyLXhlbUozREVBQzRFbTQ"><img class="placeHolder" src="Images/ExplanationArgumentation.png" alt="" width="400" height="420"></a>
+                    </div>
+
+
+                </div>
+
+
+
+
+                <div class="endOfColumns"></div>
+
+                <div class="columnLeft">
+                    <p>The pedagogical design is as follows:</p>
+                </div>
+                <div class="endOfColumns"></div>
+
+
+                <div class="columnLeft">
+
+
+                    <p><b>The question:</b> Every computational model is designed to answer a single specific question. If you're question changes, then your model must also change. <strong>To the right</strong> is the specific question that this model attempts to answer.</p>
+
+                </div>
+
+                <div class="columnRight" style="width:401px">
+
+                    <div class="algorithm">
+                        <div class="algorithmHeader">The question:</div>
+                        <div class="algorithmLine"> Why do salmon lay so many eggs? </div>
+                    </div>
+                </div>
+                <div class="endOfColumns"></div>
+
+
+
+                <div class="columnLeft">
+
+                    <p><b>The assumptions:</b> Every computational model is build upon specific assumptions that simplify the complexity of the real world so that we can answer our specific question. <strong>To the right</strong> are some of the assumptions implicit in our model.</p>
+                </div>
+
+                <div class="columnRight" style="width:401px">
+
+                    <div class="algorithm">
+                        <div class="algorithmHeader">The assumptions:</div>
+                        <div class="algorithmLine"> This model is based on the coho salmon species and follows a single adult female fish. </div>
+                        <div class="algorithmLine"> Other salmon species have similar behaviors. </div>
+
+                    </div>
+                </div>
+                <div class="endOfColumns"></div>
+
+
+
+
+                <div class="columnLeft">
+                    <p><b>The discrepant event:</b> Every lesson built around a computational model has a discrepant event. This event is often a surprise, "aha!" or eureka moment, where the model user generates an insight into the question being asked. <strong>To the right</strong> is an example of the kind of discrepant event a student might experience during this lesson. </p>
+
+                </div>
+
+                <div class="columnRight" style="width:401px">
+
+                    <div class="algorithm">
+                        <div class="algorithmHeader">Discrepant event:</div>
+                        <div class="algorithmLine"> Wow! All the eggs died! </div>
+                    </div>
+                </div>
+                <div class="endOfColumns"></div>
+
+
+
+
+                <div class="columnLeft">
+                    <p><b>The explanation:</b> Models are often used to help us explain <i>why</i> something happens in a way that matches our observations. In this case a students explanation attempts to answer "Why do salmon lay so many eggs?" <strong>To the right</strong> are a couple example explanations, both that a student might provide and that a teacher might provide.</p>
+                </div>
+
+                <div class="columnRight" style="width:401px">
+                    <div class="algorithm">
+                        <div class="algorithmHeader">Explanation:</div>
+                        <div class="algorithmLine">Student Example Explanation: "Salmon lay so many eggs because they face a lot of adversity on the journey to becoming adult coho salmon!" </div>
+                        <div class="algorithmLine">Teacher Example Explanation: "Since so many salmon die before reaching spawning adulthood, laying more eggs increases the probability for successful reproduction and a sustaining population of salmon" </div>
+                    </div>
+
+                </div>
+                <div class="endOfColumns"></div>
+
+
+
+                <div class="columnLeft">
+                    <p><b>The argument:</b> An explanation is different from an argument. An explanation can start off as a hypothesis, or a tentative explanation, that relies on observations, data, and causal events to build towards a more confident, consensus-driven conclusion. An argument attempts to assert <b>new knowledge</b> (the claim) based on evidence. An argument is often prompted by a decision-making question that can lack the certainy of being "right" or "wrong". Arguments can usually be challenged from other viewpoints. <strong>To the right</strong> is an argument question that students could respond to using evidence from this simulation.</p>
+                </div>
+
+                <div class="columnRight" style="width:401px">
+
+                    <div class="algorithm">
+                        <div class="algorithmHeader">Argument Question:</div>
+                        <div class="algorithmLine">"Where in the salmon life cycle would you intervene to have the biggest impact on salmon populations?" </div>
+                    </div>
+
+                </div>
+                <div class="endOfColumns"></div>
+
+
+                <div class="columnLeft">
+                    <p>The argument <b>claim</b>: The argument claim is an assertion that responds to the argument question. <strong>To the right</strong> is an example claim."</p>
+                    <p>The argument <b>evidence</b>: The argument evidence is a reference to data or observations that support the claim. <strong>To the right</strong> is an example of evidence that supports the example claim.</p>
+                    <p>The argument <b>reasoning</b>: The argument reasoning is a statement that links the claim and the evidence in a way that attempts to affirm the link between to two. <strong>To the right</strong> is an example of reasoning statement that links the example claim to the example evidence. </p>
+                </div>
+
+                <div class="columnRight" stype="width:401px">
+                    <div class="algorithm">
+                        <div class="algorithmHeader">Claim-Evidence-Reasoning Response:</div>
+                        <div class="algorithmLine"> Example claim: "Improving the spawning grounds would make the biggest improvement to salmon population survival." </div>
+                        <div class="algorithmLine"> Example evidence: "The data from this model shows that most of the salmon die as eggs/alevin." </div>
+                        <div class="algorithmLine"> Example reasoning: "Since most salmon die as eggs, improving the quality of spawning grounds would grow the salmon population by having more fish grow to the fry stage." </div>
+                    </div>
+                </div>
+
+                <div class="endOfColumns"></div>
+
+
+
+                <div class="columnLeft">
+                    <p><b>The extension:</b> While a computational model might help you answer a question, create an explanation or support an argument, a good computational model will often <i>motivate more new questions or ideas</i>. It's important to take advantage of the opportunity to extend the present investigation to new, different and interesting ideas.  The extension invites students to think more creatively, broadly and/or deeply about the system they are exploring, with the goal of motivating future exploration, curiosity, discovery and excitement. Scientific inquiry can be a profound and exciting open-ended endeavor, and extensions allow students to explore their curiosity about the world. </p>
+                </div>
+
+
+                <div class="columnRight" style="width:401px;">
+                    <div class="algorithm">
+                        <div class="algorithmHeader">Possible Extensions:</div>
+                        <div class="algorithmLine">Salmon and Coastal Ecosystems </div>
+                        <div class="algorithmLine"> The salmon provide nourishment for a variety of organisms in the coastal watersheds. One reason so few salmon survive to adulthood is because so many other animals depend on eating them as a good source. Salmon are often considered keystone species in their complex watershed ecosystem. </div>
+                        <div class="algorithmLine">Human Impact on Salmon</div>
+                        <div class="algorithmLine"> Salmon are a lineage of fish species that have been on the planet earth for over 5 million years. Their spawning behavior is an adaptation that emerged due to selective pressure at the scale of evolutionary time. In recent history, salmon have faced increasing pressure from human activities.</div>
+                    </div>
+
+                </div>
+
+                <div class="endOfColumns"></div>
+
             </div>
 
-            <div class="endOfColumns"></div>
 
-        </div>
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <!-- Background Info -->
+            <a class="navigation-marker" id="7"></a>
 
-
-        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-        <!-- Background Info -->
-        <a class="navigation-marker" id="6"></a>
-
-        <div class="chapter">
-            <div class="chapterHeader"><span>Background Information</span></div>
+            <div class="chapter">
+                <div class="chapterHeader"><span>Background Information</span></div>
 
 
-            <div class="columnLeft">
-                <p>Data supporting this coho life history was provided by the California Department of Fish and Wildlife, and is available here https://www.dfg.ca.gov/fish/Resources/Coho/SAL_CohoLifeHistory.asp </p>
-                <p>Data supporting the survival rates at different life cycles was provided by candian fisheries researches and is available at: </p>
+                <div class="columnLeft">
+                    <p>Data supporting this coho life history was provided by the California Department of Fish and Wildlife, and is available here https://www.dfg.ca.gov/fish/Resources/Coho/SAL_CohoLifeHistory.asp </p>
+                    <p>Data supporting the survival rates at different life cycles was provided by candian fisheries researches and is available at: </p>
 
 
+                </div>
+                <div class="columnRight" style="width:401px;">
+
+                </div>
+                <div class="endOfColumns"></div>
             </div>
-            <div class="columnRight" style="width:401px;">
-
-            </div>
-            <div class="endOfColumns"></div>
-        </div>
 
 
-        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-        <!-- Supporting Material -->
-        <a class="navigation-marker" id="7"></a>
-
-        <div class="chapter">
-            <div class="chapterHeader"><span>Supporting Material</span></div>
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <!-- Supporting Material -->
 
 
-            <div class="columnLeft">
-                <p>The lesson plan materials for this lesson are openly available at the following google drive link.</p>
-                <p>https://drive.google.com/folderview?id=0B61JMX9lcwC1fmFVb0w3UzZKUHRoVmZ1SWEtbHhUWE8zWDNLV0ZBMXNEN2RVaG5iSEdNUWM&usp=sharing</p>
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+            <!-- Share This Lesson -->
+            <a class="navigation-marker" id="8"></a>
+
+            <div class="chapter">
+                <div class="chapterHeader"><span>Share This Lesson: Support Salmon Conservation</span></div>
 
 
-            </div>
-            <div class="columnRight" style="width:401px;">
+                <div class="columnLeft">
+                    <p>Did you like this lesson? Did your students?</p>
+                    <p>Want to see more like it?</p>
+                    <p>Share this lesson. And have your students share it as well.</p>
+                    <p>Share on twitter.</p>
+                    <p>Share on facebook.</p>
+                    <p>Share by email.</p>
+                    <p>Share by text message by visiting this page on your phone or mobile device and copying this link.</p>
+                </div>
+                <div class="columnRight" style="width:401px;">
 
 
-            </div>
-            <div class="endOfColumns"></div>
-        </div>
-
-
-        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
-        <!-- Share This Lesson -->
-        <a class="navigation-marker" id="8"></a>
-
-        <div class="chapter">
-            <div class="chapterHeader"><span>Share This Lesson: Support Salmon Conservation</span></div>
-
-
-            <div class="columnLeft">
-                <p>Did you like this lesson? Did your students?</p>
-                <p>Want to see more like it?</p>
-                <p>Share this lesson. And have your students share it as well.</p>
-                <p>Share on twitter.</p>
-                <p>Share on facebook.</p>
-                <p>Share by email.</p>
-                <p>Share by text message by visiting this page on your phone or mobile device and copying this link.</p>
-            </div>
-            <div class="columnRight" style="width:401px;">
-
-
-            </div>
-            <div class="endOfColumns"></div>
-        </div>
-    </div>
-</div> <!-- Article -->
-</div> <!-- Main -->
+                </div>
+                <div class="endOfColumns"></div>
+            </div> <!-- Chapter -->
+        </div> <!-- Article -->
+    </div> <!-- Main -->
 
 
 
-
-<!--
+    <!--
 <div class="section column" style="margin-top:50px;">
 <p><span class="dropcap">A</span>yungin Shoal lies 105 nautical miles from the Philippines. There’s little to commend the spot, apart from its plentiful fish and safe harbor — except that Ayungin sits at the southwestern edge of an area called Reed Bank, which is rumored to contain vast reserves of oil and natural gas. And also that it is home to a World War II-era ship called the Sierra Madre, which the Philippine government ran aground on the reef in 1999 and has since maintained as a kind of post-apocalyptic military garrison, the small detachment of Filipino troops stationed there struggling to survive extreme mental and physical desolation. Of all places, the scorched shell of the Sierra Madre has become an unlikely battleground in a geopolitical struggle that will shape the future of the South China Sea and, to some extent, the rest of the world.
 <p>In early August, after an overnight journey in a fishing boat that had seen better days, we approached Ayungin from the south and came upon two Chinese Coast Guard cutters stationed at either side of the reef. We were a small group: two Westerners and a few Filipinos, led by Mayor Eugenio Bito-onon Jr., whose territory includes most of the Philippine land claims in the South China Sea. The Chinese presence at Ayungin had spooked the Philippine Navy out of undertaking its regular run to resupply the troops there, but the Chinese were still letting some fishing boats through. We were to behave as any regular fishing vessel with engine trouble or a need for shelter in the shoal would, which meant no radio contact. As we throttled down a few miles out and waited to see what the Chinese Coast Guard might do, there was only an eerie quiet.
@@ -1022,15 +1030,15 @@
 
 
 
-<script>defer(function() {
+    <script>defer(function() {
 
     //     var _video_assets = "http://graphics8.nytimes.com/newsgraphics/2013/10/24/south-china-sea-videos/assets/" + (innerWidth > 1150 ? 720 : 480) + "/",
     //         _image_assets = "http://i1.nyt.com/newsgraphics/2013/10/24/south-china-sea-videos/assets/" + (innerWidth > 1150 ? 720 : 480) + "/",
     //         _audio_assets = "http://graphics8.nytimes.com/newsgraphics/2013/10/24/south-china-sea-videos/assets/" + "audio/";
 
-//     var _video_assets = "file:///Users/nsipplswezey/Salmon/SalmonAssets" + "/",
-//         _image_assets = "file:///Users/nsipplswezey/Salmon/SalmonAssets" + "/",
-//         _audio_assets = "http://graphics8.nytimes.com/newsgraphics/2013/10/24/south-china-sea-videos/assets/" + "audio/";
+    //     var _video_assets = "file:///Users/nsipplswezey/Salmon/SalmonAssets" + "/",
+    //         _image_assets = "file:///Users/nsipplswezey/Salmon/SalmonAssets" + "/",
+    //         _audio_assets = "http://graphics8.nytimes.com/newsgraphics/2013/10/24/south-china-sea-videos/assets/" + "audio/";
 
     var _video_assets = "./SalmonAssets" + "/",
         _image_assets = "./SalmonAssets" + "/",
@@ -1275,43 +1283,43 @@
     }
 
 });</script>
-<style>
+    <style>
 
-    .footer-section {
-        background: #000;
-        margin-top: 0;
-        padding: 7px 0;
-        text-align: center;
-        width: 100%;
-    }
+        .footer-section {
+            background: #000;
+            margin-top: 0;
+            padding: 7px 0;
+            text-align: center;
+            width: 100%;
+        }
 
-    .footer-section a {
-        border-right: 1px solid #ccc;
-        color: #aaa;
-        font: 10px sans-serif;
-        margin-right: 7px;
-        padding-right: 7px;
-        text-decoration: none;
-        white-space: nowrap;
-    }
+        .footer-section a {
+            border-right: 1px solid #ccc;
+            color: #aaa;
+            font: 10px sans-serif;
+            margin-right: 7px;
+            padding-right: 7px;
+            text-decoration: none;
+            white-space: nowrap;
+        }
 
-    .footer-section a:last-child {
-        border-right: none;
-        margin: 0;
-        padding: 0;
-    }
+        .footer-section a:last-child {
+            border-right: none;
+            margin: 0;
+            padding: 0;
+        }
 
-    .footer-section a:hover {
-        text-dceoration: underline;
-    }
+        .footer-section a:hover {
+            text-dceoration: underline;
+        }
 
-    .footer-section ~ * {
-        position: absolute;
-        top: -1000px;
-    }
+        .footer-section ~ * {
+            position: absolute;
+            top: -1000px;
+        }
 
-</style>
-<!-- <div class="section footer-section">
+    </style>
+    <!-- <div class="section footer-section">
 <a href="http://www.nytco.com/">© 2013 The New York Times Company</a>
 <a href="http://spiderbites.nytimes.com/">Site Map</a>
 <a href="http://www.nytimes.com/privacy">Privacy</a>
@@ -1327,65 +1335,63 @@
 </div> -->
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
 
-<script src="common/util/underscore.js"></script>
+    <script src="common/util/underscore.js"></script>
 
-<!--            Tangle -->
-<script type="text/javascript" src="Tangle.js"></script>
+    <!--            Tangle -->
+    <script type="text/javascript" src="Tangle.js"></script>
 
-<!--             TangleKit -->
-<link rel="stylesheet" href="TangleKit/TangleKit.css" type="text/css">
-<script type="text/javascript" src="TangleKit/MooTools-Core-1.5.1.js"></script>
-<script type="text/javascript" src="TangleKit/sprintf.js"></script>
-<script type="text/javascript" src="TangleKit/BVTouchable.js"></script>
-<script type="text/javascript" src="TangleKit/TangleKit.js"></script>
+    <!--             TangleKit -->
+    <link rel="stylesheet" href="TangleKit/TangleKit.css" type="text/css">
+    <script type="text/javascript" src="TangleKit/MooTools-Core-1.5.1.js"></script>
+    <script type="text/javascript" src="TangleKit/sprintf.js"></script>
+    <script type="text/javascript" src="TangleKit/BVTouchable.js"></script>
+    <script type="text/javascript" src="TangleKit/TangleKit.js"></script>
 
-<!--             LayerScript -->
-<script type="text/javascript" src="LayerScript/BVLayer.js"></script>
-<script type="text/javascript" src="LayerScript/BVText.js"></script>
-<script type="text/javascript" src="LayerScript/BVTouches.js"></script>
-<script type="text/javascript" src="LayerScript/BVScrubbableLayer.js"></script>
+    <!--             LayerScript -->
+    <script type="text/javascript" src="LayerScript/BVLayer.js"></script>
+    <script type="text/javascript" src="LayerScript/BVText.js"></script>
+    <script type="text/javascript" src="LayerScript/BVTouches.js"></script>
+    <script type="text/javascript" src="LayerScript/BVScrubbableLayer.js"></script>
 
-<!-- Tangle Project -->
-<script type="text/javascript" src="Project/Main.js"></script>
-<script type="text/javascript" src="Project/Slider.js"></script>
-<script type="text/javascript" src="Project/Misc.js"></script>
-
-
-<!-- NStyles -->
-<link rel="stylesheet" type="text/css" href="common/css/nova.css" />
-<link rel="stylesheet" type="text/css" href="common/css/linechart.css" />
-<link rel="stylesheet" type="text/css" href="common/css/table.css" />
-
-<!-- Page Styles -->
-<link href="Style.css" rel="stylesheet" type="text/css"/>
+    <!-- Tangle Project -->
+    <script type="text/javascript" src="Project/Main.js"></script>
+    <script type="text/javascript" src="Project/Slider.js"></script>
+    <script type="text/javascript" src="Project/Misc.js"></script>
 
 
-<!-- nol -->
-<script src="common/NovaOL/jnx.min.js"></script>
-<script src="common/NovaOL/jpx.min.js"></script>
-<script src="common/NovaOL/nol.min.js"></script>
+    <!-- NStyles -->
+    <link rel="stylesheet" type="text/css" href="common/css/nova.css" />
+    <link rel="stylesheet" type="text/css" href="common/css/linechart.css" />
+    <link rel="stylesheet" type="text/css" href="common/css/table.css" />
 
-<!-- nolPlugins -->
-<script src="common/plugins/linechart.min.js"></script>
-<script src="common/plugins/table.min.js"></script>
-
-<script src="inclassGameSingleGen2600.json" data-project="inclassGameSingleGen2600"></script>
-<script src="inclassGameSingleGen2600.js" data-project="inclassGameSingleGen2600"></script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function(event) {
-        Novaol.startup("inclassGameSingleGen2600", "1");
-
-        novaol.signoff();
-
-    });
-</script>
+    <!-- Page Styles -->
+    <link href="Style.css" rel="stylesheet" type="text/css"/>
 
 
+    <!-- nol -->
+    <script src="common/NovaOL/jnx.min.js"></script>
+    <script src="common/NovaOL/jpx.min.js"></script>
+    <script src="common/NovaOL/nol.min.js"></script>
 
-<script>(function() {
+    <!-- nolPlugins -->
+    <script src="common/plugins/linechart.min.js"></script>
+    <script src="common/plugins/table.min.js"></script>
+
+    <script src="inclassGameSingleGen2600.json" data-project="inclassGameSingleGen2600"></script>
+    <script src="inclassGameSingleGen2600.js" data-project="inclassGameSingleGen2600"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            Novaol.startup("inclassGameSingleGen2600", "1");
+
+            novaol.signoff();
+
+        });
+    </script>
+
+    <script>(function() {
 
     var watched = [];
 
